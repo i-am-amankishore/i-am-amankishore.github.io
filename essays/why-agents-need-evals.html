@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why agents need evals | Aman Kishore</title>
+<meta name="description" content="An essay by Aman Kishore on why the eval harness, not the model, is what makes an AI agent safe to ship.">
+<style>
+  :root {
+    --bg: #fafaf7;
+    --ink: #1a1c1e;
+    --muted: #5c6166;
+    --line: #e4e2db;
+    --accent: #0f4c5c;
+    --card: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a;
+      --ink: #e8e6e1;
+      --muted: #9aa0a6;
+      --line: #2a2d33;
+      --accent: #7fc4d4;
+      --card: #1a1d22;
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--accent); }
+  .back { display: inline-block; margin: 40px 0 0; font-size: 14px; color: var(--muted); text-decoration: none; }
+  .back:hover { color: var(--accent); }
+  header { padding: 24px 0 32px; border-bottom: 1px solid var(--line); margin-bottom: 40px; }
+  .kicker { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+  h1 { font-size: 34px; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 16px; font-weight: 700; }
+  .byline { font-size: 15px; color: var(--muted); }
+  article p { margin-bottom: 22px; }
+  article h2 { font-size: 20px; margin: 36px 0 14px; letter-spacing: -0.01em; }
+  blockquote {
+    margin: 26px 0; padding: 4px 0 4px 20px; border-left: 3px solid var(--accent);
+    color: var(--ink); font-size: 19px;
+  }
+  code {
+    background: var(--card); border: 1px solid var(--line); border-radius: 5px;
+    padding: 1px 6px; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 15px;
+  }
+  footer { margin: 48px 0 80px; padding-top: 28px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); }
+  footer a { font-weight: 500; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <a class="back" href="../index.html">&larr; Aman Kishore</a>
+
+  <header>
+    <div class="kicker">Essay</div>
+    <h1>Why agents need evals</h1>
+    <p class="byline">Aman Kishore, Head of Product at TruKKer</p>
+  </header>
+
+  <article>
+    <p>Most AI agent demos are lies of omission. They show you the run that worked. The founder types a question, the agent answers beautifully, the room nods. What the demo never shows is the other forty runs, the ones where the agent confidently did the wrong thing to someone who was not in the room to catch it. In a demo, a wrong answer is a laugh. In production, a wrong answer is a customer.</p>
+
+    <p>The gap between those two worlds is not a better model. It is an eval.</p>
+
+    <p>An eval is a fixed set of labeled cases and a script that measures how the agent does against them. It sounds like testing because it is, but the mindset is different. A unit test asks "did this function return 4." An eval asks "of the hundred messages a customer might send, how many did we handle correctly, and of the ones we got wrong, how badly." That second clause is where the product judgment lives.</p>
+
+    <h2>The number that decides whether you ship</h2>
+
+    <p>I build agents for a freight marketplace, so let me use one. An inbound triage agent reads a message, decides what it is about, and either answers it or routes it to a human. Accuracy sounds like the metric that matters. It is not. The metric that matters is what happens on the misses.</p>
+
+    <p>Consider two agents that are both 92% accurate. The first one, when it is wrong, sends a slightly off but harmless reply. The second one, when it is wrong, auto-answers a furious customer who asked about a missing payment. Same accuracy, completely different products. One is shippable. The other will lose you an account by Friday.</p>
+
+    <blockquote>Overall accuracy is the number people quote. Escalation recall is the number that decides whether you ship.</blockquote>
+
+    <p>So the eval I actually gate on is not accuracy. It is escalation recall: of the messages that must reach a human, complaints and payment disputes, how many did. That number has to be 1.00. Not 0.98. If the agent auto-answers even one angry customer about their money, the release does not go out, and the eval script says so in plain words: <code>DO NOT SHIP</code>.</p>
+
+    <h2>Evals turn opinions into decisions</h2>
+
+    <p>Before I had an eval, every argument about the agent was a matter of taste. Someone felt it was too aggressive. Someone else felt it was too timid. We would tune a prompt, watch a few examples, and convince ourselves. It was theater with a keyboard.</p>
+
+    <p>The first time I ran a real eval on that triage agent, it scored 0.90 on escalation recall, and the reason was specific: one invoice dispute had been classified as a routine status check and auto-answered. I had not noticed in casual testing because the wording looked calm. The eval noticed. The fix was a guardrail that routes anything mentioning money to a human even when the classifier is confident it is routine. Policy beat classification, and I only knew to write that policy because a labeled case caught the exact failure. The eval paid for itself on its first run.</p>
+
+    <p>That is the real value. An eval converts vibes into a decision you can defend. It lets you say "we do not ship below 1.00 escalation recall" and have that mean something, the same way a company that says it cares about quality but ships anyway does not actually care about quality. The commitment is only real if something can fail it.</p>
+
+    <h2>What this means if you lead product</h2>
+
+    <p>You do not need to write the eval yourself, but you do need to insist it exists, and you need to be the one who decides what the gate is. That decision is not technical. Choosing that escalation recall must be perfect while accuracy can sit at 0.92 is a statement about which mistakes your business can survive and which it cannot. That is product strategy wearing a lab coat, and handing it to whoever happens to be tuning the prompt is how you end up with an agent optimized for the demo instead of the customer.</p>
+
+    <p>The uncomfortable part is that a good eval will slow you down. It will block releases you wanted to ship and force conversations you wanted to skip. That friction is the feature. An agent with no eval is not faster, it is just failing where you cannot see it yet. The teams that win with AI are not the ones with the best model. They are the ones willing to write down, in a file that can go red, what wrong is not allowed to look like.</p>
+  </article>
+
+  <footer>
+    Written alongside <a href="https://github.com/i-am-amankishore/inquiry-triage-agent" target="_blank" rel="noopener">inquiry-triage-agent</a>, an agent with the eval harness this essay describes. More at <a href="../index.html">amankishore</a> and on <a href="https://www.linkedin.com/in/i-am-amankishore" target="_blank" rel="noopener">LinkedIn</a>.
+  </footer>
+</div>
+
+</body>
+</html>

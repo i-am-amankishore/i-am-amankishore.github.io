@@ -1,0 +1,3 @@
+# Sandbox filesystem ghost files, never commit
+.fuse_hidden*
+.DS_Store
