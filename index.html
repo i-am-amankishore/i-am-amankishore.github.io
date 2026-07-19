@@ -14,6 +14,7 @@
     --accent: #0f4c5c;
     --accent-soft: #e7f0f2;
     --card: #ffffff;
+    --shadow: 0 10px 24px rgba(15, 76, 92, 0.10);
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -24,6 +25,7 @@
       --accent: #7fc4d4;
       --accent-soft: #1c2b30;
       --card: #1a1d22;
+      --shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
     }
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -73,12 +75,32 @@
   .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   @media (max-width: 640px) { .projects { grid-template-columns: 1fr; } h1 { font-size: 34px; } }
   .proj {
-    display: block; background: var(--card); border: 1px solid var(--line);
-    border-radius: 12px; padding: 20px; transition: border-color 0.15s ease;
+    display: flex; flex-direction: column; gap: 10px;
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 12px; padding: 20px;
+    transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
   }
-  .proj:hover { border-color: var(--accent); text-decoration: none; }
-  .proj b { display: block; font-size: 16px; color: var(--ink); margin-bottom: 6px; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-weight: 600; }
-  .proj span { font-size: 14.5px; color: var(--muted); line-height: 1.5; }
+  .proj:hover {
+    border-color: var(--accent); text-decoration: none;
+    transform: translateY(-2px); box-shadow: var(--shadow);
+  }
+  .proj .chip {
+    align-self: flex-start; font-size: 11px; letter-spacing: 0.08em;
+    text-transform: uppercase; font-weight: 600; color: var(--accent);
+    background: var(--accent-soft); padding: 3px 10px; border-radius: 999px;
+  }
+  .proj b { font-size: 17px; color: var(--ink); font-weight: 650; letter-spacing: -0.01em; }
+  .proj .desc { font-size: 14.5px; color: var(--muted); line-height: 1.55; }
+  .proj-foot {
+    margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  }
+  .proj-foot .proof {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 12px; color: var(--muted);
+  }
+  .proj-foot .go { font-size: 13px; font-weight: 600; color: var(--accent); white-space: nowrap; }
+  .proj:hover .go { text-decoration: underline; }
   .proj-note { font-size: 14.5px; color: var(--muted); margin-top: 18px; }
 
   .principles p { color: var(--muted); max-width: 660px; margin-bottom: 14px; }
@@ -154,28 +176,40 @@
     <h2>Things I build to think</h2>
     <div class="projects">
       <a class="proj" href="https://github.com/i-am-amankishore/inquiry-triage-agent" target="_blank" rel="noopener">
-        <b>inquiry-triage-agent</b>
-        <span>An agentic triage pipeline for inbound freight inquiries: classify, extract, route, draft a reply. Ships with an eval harness, because an agent without evals is a demo.</span>
+        <span class="chip">Agentic AI</span>
+        <b>Inbound inquiry triage</b>
+        <span class="desc">Classifies inbound freight messages, extracts what ops needs, and decides when a machine may answer and when a human must. Anger and money always get a human.</span>
+        <span class="proj-foot"><span class="proof">eval gate: escalation recall 1.00</span><span class="go">View code &rarr;</span></span>
       </a>
       <a class="proj" href="https://github.com/i-am-amankishore/prd-copilot" target="_blank" rel="noopener">
-        <b>prd-copilot</b>
-        <span>Turns a messy problem statement into a PRD draft, lints existing PRDs against a quality bar, and ranks backlogs with RICE and WSJF. My real template is inside.</span>
+        <span class="chip">Product craft</span>
+        <b>PRD copilot</b>
+        <span class="desc">Drafts a PRD from a messy problem statement, lints existing PRDs against a quality bar, and ranks backlogs with RICE and WSJF. My real template is inside.</span>
+        <span class="proj-foot"><span class="proof">sample PRD scores 100/100</span><span class="go">View code &rarr;</span></span>
       </a>
       <a class="proj" href="https://github.com/i-am-amankishore/freight-rate-simulator" target="_blank" rel="noopener">
-        <b>freight-rate-simulator</b>
-        <span>An explainable lane pricing engine. Every quote comes with the math that produced it, plus a simulator that finds the margin-maximizing price, not the win-rate-maximizing one.</span>
+        <span class="chip">Pricing</span>
+        <b>Freight rate simulator</b>
+        <span class="desc">An explainable lane pricing engine. Every quote is a set of line items a human can argue with, plus a simulator that finds the profit-maximizing price, not the win-rate one.</span>
+        <span class="proj-foot"><span class="proof">profit peaks at 1.22x, 33% win rate</span><span class="go">View code &rarr;</span></span>
       </a>
       <a class="proj" href="https://github.com/i-am-amankishore/settlement-engine" target="_blank" rel="noopener">
-        <b>settlement-engine</b>
-        <span>The money layer of a freight marketplace in miniature: milestone-based carrier payouts, a double-entry multi-currency ledger, receivables aging, and a DSO report.</span>
+        <span class="chip">Fintech</span>
+        <b>Settlement engine</b>
+        <span class="desc">Milestone-based carrier payouts on a double-entry multi-currency ledger, with receivables aging and a DSO report. Money never floats.</span>
+        <span class="proj-foot"><span class="proof">8 invariant tests, 4 currencies</span><span class="go">View code &rarr;</span></span>
       </a>
       <a class="proj" href="https://github.com/i-am-amankishore/discovery-interview-insights" target="_blank" rel="noopener">
-        <b>discovery-interview-insights</b>
-        <span>Turns a folder of user interviews into ranked themes, each carrying the verbatim quotes that earned it. A theme without a quote is an opinion.</span>
+        <span class="chip">Research</span>
+        <b>Discovery interview insights</b>
+        <span class="desc">Turns a folder of user interviews into ranked themes, each carrying the verbatim quotes that earned it. A theme without a quote is an opinion.</span>
+        <span class="proj-foot"><span class="proof">quote precision 1.00, recall 0.90</span><span class="go">View code &rarr;</span></span>
       </a>
       <a class="proj" href="https://github.com/i-am-amankishore/carrier-onboarding-checker" target="_blank" rel="noopener">
-        <b>carrier-onboarding-checker</b>
-        <span>Completeness, expiry, and consistency checks on onboarding documents. Fails closed: it never auto-approves anything it cannot fully verify.</span>
+        <span class="chip">Trust and safety</span>
+        <b>Carrier onboarding checker</b>
+        <span class="desc">Completeness, expiry, and consistency checks on onboarding documents. Fails closed: nothing it cannot fully verify gets auto-approved.</span>
+        <span class="proj-foot"><span class="proof">9 decision invariants under test</span><span class="go">View code &rarr;</span></span>
       </a>
     </div>
     <p class="proj-note">Everything runs offline on mock data with zero API keys, and every repo runs its own tests in CI. Nothing here is company code. All of it reflects how I think about product.</p>
@@ -185,8 +219,10 @@
     <h2>Writing</h2>
     <div class="projects">
       <a class="proj" href="essays/why-agents-need-evals.html">
+        <span class="chip">Essay</span>
         <b>Why agents need evals</b>
-        <span>Most agent demos show you the run that worked. The eval, not the model, is what makes an agent safe to ship. On the one number that decides whether a release goes out.</span>
+        <span class="desc">Most agent demos show you the run that worked. The eval, not the model, is what makes an agent safe to ship. On the one number that decides whether a release goes out.</span>
+        <span class="proj-foot"><span class="proof">4 minute read</span><span class="go">Read &rarr;</span></span>
       </a>
     </div>
   </section>
