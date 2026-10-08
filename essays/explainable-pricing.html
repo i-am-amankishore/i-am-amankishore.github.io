@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en" class="nojs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Price the relationship, not the third decimal | Aman Kishore</title>
+<meta name="description" content="Aman Kishore on explainable freight pricing: every quote a list of line items a human can argue with, and a profit curve with a wide, flat top.">
+<meta name="author" content="Aman Kishore">
+<link rel="canonical" href="https://i-am-amankishore.github.io/essays/explainable-pricing.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F8F6F1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1A1916" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Aman Kishore">
+<meta property="og:url" content="https://i-am-amankishore.github.io/essays/explainable-pricing.html">
+<meta property="og:title" content="Price the relationship, not the third decimal">
+<meta property="og:description" content="Aman Kishore on explainable freight pricing: every quote a list of line items a human can argue with, and a profit curve with a wide, flat top.">
+<meta property="og:image" content="https://i-am-amankishore.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Aman Kishore, Head of Product at TruKKer">
+<meta property="article:author" content="Aman Kishore">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Price the relationship, not the third decimal">
+<meta name="twitter:description" content="Aman Kishore on explainable freight pricing: every quote a list of line items a human can argue with, and a profit curve with a wide, flat top.">
+<meta name="twitter:image" content="https://i-am-amankishore.github.io/og.png">
+<meta name="twitter:image:alt" content="Aman Kishore, Head of Product at TruKKer">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Price the relationship, not the third decimal", "description": "Aman Kishore on explainable freight pricing: every quote a list of line items a human can argue with, and a profit curve with a wide, flat top.", "url": "https://i-am-amankishore.github.io/essays/explainable-pricing.html", "mainEntityOfPage": "https://i-am-amankishore.github.io/essays/explainable-pricing.html", "image": "https://i-am-amankishore.github.io/og.png", "inLanguage": "en", "timeRequired": "PT5M", "dateModified": "2026-10-08", "author": {"@type": "Person", "name": "Aman Kishore", "jobTitle": "Head of Product", "worksFor": {"@type": "Organization", "name": "TruKKer"}, "url": "https://i-am-amankishore.github.io/", "sameAs": ["https://www.linkedin.com/in/i-am-amankishore", "https://github.com/i-am-amankishore"]}, "publisher": {"@type": "Person", "name": "Aman Kishore", "url": "https://i-am-amankishore.github.io/"}, "isPartOf": {"@type": "WebSite", "name": "Aman Kishore", "url": "https://i-am-amankishore.github.io/"}, "about": {"@type": "SoftwareSourceCode", "name": "freight-rate-simulator", "codeRepository": "https://github.com/i-am-amankishore/freight-rate-simulator"}}
+</script>
+<script>document.documentElement.classList.remove("nojs");try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+:root{--paper:#F8F6F1;--paper2:#EFEBE3;--ink:#1D1C1A;--ink2:#57534B;--rule:#D9D3C7;--line:#847E72;--acc:#1E5641;--acc2:#143D2E;--on:#F8F6F1;
+--serif:"Iowan Old Style","Palatino Linotype",Palatino,"URW Palladio L",P052,"Book Antiqua",Georgia,serif;
+--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+--mono:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+--gut:16px;--cg:16px;--h1:clamp(2.5rem,1.6rem + 3.6vw,4.6rem);--h2:clamp(2rem,1.4rem + 2vw,3rem);--h3:clamp(1.5rem,1.2rem + 1vw,2rem);
+--st:clamp(1.1875rem,1.05rem + .5vw,1.4375rem);--fig:clamp(2.25rem,1.6rem + 1.6vw,3.25rem);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--paper:#1A1916;--paper2:#24221E;--ink:#ECE7DD;--ink2:#B4AD9F;--rule:#3A3731;--line:#7A7468;--acc:#8DC4A6;--acc2:#A9D6BD;--on:#11201A;color-scheme:dark}}
+:root[data-theme=dark]{--paper:#1A1916;--paper2:#24221E;--ink:#ECE7DD;--ink2:#B4AD9F;--rule:#3A3731;--line:#7A7468;--acc:#8DC4A6;--acc2:#A9D6BD;--on:#11201A;color-scheme:dark}
+@media(min-width:600px){:root{--gut:32px;--cg:24px}}
+@media(min-width:1100px){:root{--gut:48px;--cg:32px}}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:84px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--sans);-webkit-font-smoothing:antialiased;font-kerning:normal}
+@media(min-width:1100px){body{font-size:1.125rem}}
+h1,h2,h3,h4,h5{margin:0;font-family:var(--serif);font-weight:400;text-wrap:balance}
+p,ul,ol,dl,dd,figure,blockquote{margin:0}
+ul,ol{padding:0;list-style:none}
+p{text-wrap:pretty}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.2em}
+a:hover{color:var(--acc)}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+[hidden]{display:none!important}
+::selection{background:var(--acc);color:var(--on)}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.wrap{max-width:75rem;margin:0 auto;padding:0 var(--gut)}
+.g{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--cg)}
+.g>*{grid-column:1/-1;min-width:0}
+@media(min-width:1100px){.g>.rail{grid-column:1/4}.g>.body{grid-column:4/13}}
+.sc{font-family:var(--serif);font-variant-caps:all-small-caps;letter-spacing:.06em;font-size:1.0625rem}
+.hint{color:var(--ink2);font-size:.9375rem;line-height:1.5}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 20px;border:1px solid var(--line);border-radius:2px;background:transparent;color:var(--ink);font:600 1rem/1.2 var(--sans);text-decoration:none;cursor:pointer}
+.btn:hover{border-color:var(--ink);color:var(--ink)}
+.btn-p{background:var(--acc);border-color:var(--acc);color:var(--on)}
+.btn-p:hover{background:var(--acc2);border-color:var(--acc2);color:var(--on)}
+.tl{display:inline-flex;align-items:center;min-height:44px;padding:0 8px;font-weight:600}
+.skip{position:absolute;left:8px;top:-80px;z-index:30;padding:12px 16px;background:var(--ink);color:var(--paper);font-weight:600;text-decoration:none}
+.skip:focus{top:8px;color:var(--paper)}
+.hdr{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--rule)}
+.bar{display:flex;align-items:center;gap:8px;min-height:60px}
+.brand{display:inline-flex;align-items:center;gap:10px;min-height:44px;margin-right:auto;font:400 1.1875rem/1 var(--serif);color:var(--ink);text-decoration:none;white-space:nowrap}
+.mono{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--acc);color:var(--on);font:600 .8125rem/1 var(--serif);letter-spacing:.05em}
+.nav{display:none}
+.nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;color:var(--ink2);font-size:.9375rem;text-decoration:none}
+.nav a:hover{color:var(--ink);text-decoration:underline}
+.bar .btn{min-height:44px;padding:0 14px;font-size:.9375rem;white-space:nowrap}
+.bar .nav-t{display:none}
+.ib{display:inline-grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:2px;background:none;color:var(--ink2);cursor:pointer}
+.ib:hover{color:var(--ink)}
+.ib svg{width:20px;height:20px}
+.menu summary{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid var(--line);border-radius:2px;font-weight:600;font-size:.9375rem;cursor:pointer;list-style:none;user-select:none}
+.menu summary::-webkit-details-marker{display:none}
+.menu .mc,.menu[open] .mo{display:none}
+.menu[open] .mc{display:inline}
+.menu:not([open]) .panel{display:none}
+.panel{position:absolute;left:0;right:0;top:100%;max-height:calc(100vh - 60px);max-height:calc(100dvh - 60px);overflow-y:auto;overscroll-behavior:contain;padding:4px var(--gut) 20px;background:var(--paper);border-bottom:2px solid var(--ink)}
+.panel a{display:flex;align-items:center;min-height:52px;border-bottom:1px solid var(--rule);color:var(--ink);font:400 1.375rem/1.2 var(--serif);text-decoration:none}
+.panel .theme{display:flex;align-items:center;gap:10px;width:100%;min-height:52px;padding:0;border:0;background:none;color:var(--ink2);font:600 .9375rem var(--sans);cursor:pointer}
+.panel .theme svg{width:20px;height:20px}
+@media(min-width:900px){.nav{display:flex}.menu{display:none}.bar{min-height:64px}.bar .nav-t{display:inline-grid}}
+@media(max-width:379px){.brand{font-size:1.0625rem;gap:8px}.mono{width:30px;height:30px}.bar{gap:6px}.bar .btn,.menu summary{padding:0 10px}}
+@media(max-width:339px){.mono{display:none}}
+.nojs .hdr{position:relative}
+.eh{padding:clamp(40px,7vw,96px) 0 clamp(24px,3vw,36px);border-bottom:2px solid var(--ink)}
+.kick{margin-bottom:14px;color:var(--ink2)}
+.eh h1{max-width:14em;font-size:clamp(2.25rem,1.45rem + 3.2vw,4rem);line-height:1.06;letter-spacing:-.015em}
+.by{display:flex;flex-wrap:wrap;gap:2px 20px;margin-top:clamp(16px,2.2vw,24px);color:var(--ink2);font-size:.9375rem;line-height:1.5}
+.by span:first-child{color:var(--ink);font-weight:600}
+@media(min-width:1100px){.kick{margin:0;padding-top:.7rem}}
+.eb{padding-top:clamp(32px,4.4vw,56px)}
+.toc{display:none}
+@media(min-width:1100px){.toc{display:block;position:sticky;top:96px;align-self:start;padding-right:8px}
+.toc .sc{color:var(--ink2)}
+.toc ol{margin-top:8px;border-top:1px solid var(--rule)}
+.toc li{border-bottom:1px solid var(--rule)}
+.toc a{display:flex;align-items:center;min-height:44px;padding:8px 0;color:var(--ink2);font-size:.9375rem;line-height:1.35;text-decoration:none}
+.toc a:hover{color:var(--ink);text-decoration:underline}}
+.prose{max-width:66ch;counter-reset:fig}
+.prose>*+*{margin-top:1.15em}
+.prose p{line-height:1.7}
+.prose>h2{margin-top:2.1em;font-size:var(--h3);line-height:1.15;letter-spacing:-.005em}
+.prose>h2+*{margin-top:.65em}
+.prose a{text-decoration-color:var(--acc)}
+code{font:400 .875em/1.5 var(--mono);overflow-wrap:anywhere}
+.prose code{padding:.06em .3em;border-radius:2px;background:var(--paper2)}
+.prose>blockquote{margin-block:1.8em;padding-top:18px;border-top:1px solid var(--ink);font:italic 400 clamp(1.375rem,1.1rem + 1.2vw,1.875rem)/1.3 var(--serif);text-indent:-.42em;text-wrap:balance}
+.prose>blockquote::before{content:"\201C"}
+.prose>blockquote>code{font-style:normal;text-indent:0}
+.prose>figure{--accent:var(--acc);--muted:var(--ink2);--bg:var(--paper2);margin-block:2em;padding:clamp(18px,2.6vw,32px) clamp(16px,2.6vw,32px) clamp(18px,2.4vw,28px);background:var(--paper2);counter-increment:fig}
+@media(max-width:599px){.prose>figure{margin-inline:calc(-1 * var(--gut))}}
+.prose figure code{background:var(--paper)}
+.prose figcaption{color:var(--ink2);font-size:.9375rem;line-height:1.5}
+.prose figcaption::before{content:"Figure " counter(fig);display:block;margin-bottom:4px;font-family:var(--serif);font-variant-caps:all-small-caps;letter-spacing:.06em;font-size:1.0625rem}
+.prose figure svg{display:block;margin-top:18px;overflow:visible;font-family:var(--sans)}
+.prose figure.chart svg{--line:var(--rule)}
+.prose figure.aging-chart svg{width:100%;max-width:27.5rem;height:auto}
+.prose figure>table,.prose details{margin-top:16px}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums lining-nums}
+caption{padding-bottom:8px;color:var(--ink2);font-size:.875rem;text-align:left}
+th,td{padding:9px 12px 9px 0;border-top:1px solid var(--rule);font-size:.9375rem;line-height:1.45;text-align:left;vertical-align:top}
+th:last-child,td:last-child{padding-right:0}
+thead th{padding-top:4px;border-top:0;border-bottom:1px solid var(--ink);color:var(--ink2);font-size:.875rem;font-weight:600;vertical-align:bottom}
+tbody tr:first-child>*{border-top:0}
+tbody th{font-weight:400}
+tfoot>tr>*{font-weight:600}
+tfoot tr:first-child>*{border-top:1px solid var(--ink)}
+.quote td:first-of-type,.quote thead th:nth-child(2),.chart td,.chart thead th:not(:first-child),.aging-chart td,.aging-chart thead th:not(:first-child),.ledger-excerpt td:last-child,.ledger-excerpt thead th:last-child{text-align:right;white-space:nowrap}
+.quote td:first-of-type{padding-right:16px}
+.prose details{border-top:1px solid var(--line)}
+.prose summary{display:flex;align-items:center;gap:10px;min-height:44px;font-weight:600;font-size:.9375rem;cursor:pointer;list-style:none}
+.prose summary::-webkit-details-marker{display:none}
+.prose summary::before{content:"";width:0;height:0;border-left:6px solid currentColor;border-top:5px solid transparent;border-bottom:5px solid transparent}
+.prose details[open]>summary::before{transform:rotate(90deg)}
+.prose summary:hover{color:var(--acc)}
+.prose details>table{margin-top:4px}
+.ef{margin-top:clamp(56px,7vw,96px)}
+.wa{max-width:66ch;padding-top:16px;border-top:2px solid var(--ink)}
+.wa .sc{margin-bottom:6px;color:var(--ink2)}
+.wa p:not(.sc){line-height:1.7}
+.mh{margin-top:clamp(44px,5.6vw,72px);padding-bottom:6px;font-size:var(--h3);line-height:1.15}
+.es li{display:grid;gap:4px 32px;padding:22px 0 26px;border-top:1px solid var(--rule)}
+@media(min-width:760px){.es li{grid-template-columns:minmax(0,5fr) minmax(0,6fr);grid-template-rows:auto 1fr}.es li>p:last-child{grid-column:2;grid-row:1/3}}
+.es h3{font-size:var(--h3);line-height:1.15}
+.es h3 a{display:inline-block;padding:10px 0;text-decoration:none}
+.es h3 a:hover{text-decoration:underline}
+.es .em{color:var(--ink2);font-size:.9375rem}
+.home{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding-top:24px;border-top:1px solid var(--rule)}
+.ftr{margin-top:clamp(56px,7vw,96px);border-top:1px solid var(--rule)}
+.ftr .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 24px;padding-top:20px;padding-bottom:32px;color:var(--ink2);font-size:.9375rem}
+.ftr .tl{padding:0;font-weight:500}
+@media print{.hdr,.toc,.ftr,.home{display:none}:root{--paper:#fff;--paper2:#f4f2ee}}
+</style>
+</head>
+<body id="top">
+<header class="hdr">
+<a class="skip" href="#main">Skip to main content</a>
+<div class="wrap bar">
+<a class="brand" href="../"><span class="mono" aria-hidden="true">AK</span>Aman Kishore</a>
+<nav class="nav" aria-label="Sections"><a href="../#work">Work</a><a href="../#router">Router</a><a href="../#projects">Projects</a><a href="../#writing">Writing</a><a href="../#path">Path</a><a href="../#contact">Contact</a></nav>
+<button class="ib theme nav-t" type="button" hidden aria-label="Switch to dark theme"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg></button>
+<a class="btn btn-p" href="mailto:jayaswal.amk@gmail.com">Email me</a>
+<details class="menu">
+<summary><span class="mo">Menu</span><span class="mc">Close<span class="vh"> menu</span></span></summary>
+<div class="panel">
+<nav aria-label="Sections menu"><a href="../#work">Work</a><a href="../#router">Router</a><a href="../#projects">Projects</a><a href="../#writing">Writing</a><a href="../#path">Path</a><a href="../#contact">Contact</a></nav>
+<button class="theme" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg><span class="tt">Switch to dark theme</span></button>
+</div>
+</details>
+</div>
+</header>
+<main id="main">
+<article class="post">
+<div class="wrap">
+<header class="eh g">
+<div class="rail"><p class="sc kick">Essay · Marketplaces and pricing</p></div>
+<div class="body">
+<h1>Price the relationship, not the third decimal</h1>
+<p class="by"><span>Aman Kishore, Head of Product at TruKKer</span><span>5 minute read</span></p>
+</div>
+</header>
+<div class="g eb">
+<nav class="rail toc" aria-label="In this essay"><p class="sc">In this essay</p><ol><li><a href="#four-lines-a-human-can-argue-with">Four lines a human can argue with</a></li><li><a href="#where-the-freight-knowledge-lives">Where the freight knowledge lives</a></li><li><a href="#the-top-of-the-curve-is-flat">The top of the curve is flat</a></li><li><a href="#what-fourteen-lanes-cannot-tell-you">What fourteen lanes cannot tell you</a></li></ol></nav>
+<div class="body prose">
+<p>A shipper asks why Riyadh to Jeddah costs more this month. The person on the call has nothing to offer but the number. At that point the quote is dead, however good the model behind it. Pricing engines that fail in the field usually fail here, not in the math.</p>
+
+<p>Shippers are not the only skeptics. Ops teams and carriers do not trust black boxes either, and they are right not to. A quote you cannot explain is a quote you cannot defend or negotiate. You can only hold it or drop it. So <code>freight-rate-simulator</code>, a small pricing engine I wrote on mock data, opens with a contract: every quote is a sum of line items a human can argue with.</p>
+
+<h2 id="four-lines-a-human-can-argue-with">Four lines a human can argue with</h2>
+
+<p>Here is the engine's quote for a flatbed from Riyadh to Jeddah in June.</p>
+
+<figure class="quote">
+  <figcaption>The quote from <code>rates.py</code>: Riyadh to Jeddah (RUH-JED), flatbed, month 6, fuel 0.85. US dollars, one truck, one way. The reasons are the engine's own output.</figcaption>
+  <table>
+    <thead>
+      <tr><th scope="col">Line item</th><th scope="col">Amount</th><th scope="col">Reason</th></tr>
+    </thead>
+    <tbody>
+      <tr><th scope="row">Base linehaul</th><td>902.50</td><td>950 km x 0.95/km (flatbed)</td></tr>
+      <tr><th scope="row">Fuel adjustment</th><td>0.00</td><td>fuel at 0.85 vs 0.85 baseline, 35% of cost is fuel</td></tr>
+      <tr><th scope="row">Demand adjustment</th><td>187.27</td><td>lane demand 1.15 x month 6 season 1.05</td></tr>
+      <tr><th scope="row">Imbalance adjustment</th><td>135.38</td><td>empty return risk priced in</td></tr>
+    </tbody>
+    <tfoot>
+      <tr><th scope="row">Cost</th><td>1,225.14</td><td></td></tr>
+      <tr><th scope="row">Price</th><td>1,392.21</td><td>margin 12.0%</td></tr>
+    </tfoot>
+  </table>
+</figure>
+
+<p>Every amount arrives with its reason, and each line moves independently. When the fuel price changes, the fuel line changes and nothing else does. If June turns out quieter than the seasonal curve assumed, you can point at the demand line and say how wrong it was.</p>
+
+<p>That lets people argue one line at a time. A sales lead can defend the demand line to a shipper. A carrier can push back on fuel, and should whenever fuel moves. An argument about a line is a negotiation. An argument about a total is a standoff.</p>
+
+<p>The reasons in the table are not written for this essay. The engine prints them from the same variables it adds up. An explanation written after the fact drifts away from the math. One printed by the math cannot.</p>
+
+<p>There is a second payoff, in revenue. A lump sum can only be negotiated down. A list can also be added to. At Logisty, the B2C home and goods moving platform in the UAE whose 0 to 1 launch I led, value-added services and dynamic line-item pricing lifted average order value 9%, because the list gave the booking flow somewhere to put an upsell.</p>
+
+<h2 id="where-the-freight-knowledge-lives">Where the freight knowledge lives</h2>
+
+<p>Base, fuel and demand are arithmetic anyone could write. The imbalance line is where knowing freight pays.</p>
+
+<p>Trucks have to come home. On a lane where more loads go out than come back, the carrier who takes the outbound load will often drive the return leg empty, and someone pays for those empty kilometers. In my mock lane file, Riyadh to Jeddah is the heavy direction, with an imbalance of 0.30. The engine prices half of that empty-return risk into the fronthaul: 135.38 on a 902.50 base.</p>
+
+<p>Run the reverse lane and the same physics becomes a discount. Jeddah to Riyadh carries an imbalance of minus 0.20, so the line comes out at minus 90.25, and the engine's reason reads "backhaul discount, trucks want this lane." A truck already in Jeddah would rather earn something on the way home than nothing.</p>
+
+<p>This is the line a generic pricing model misses, because it treats every lane as its own market. Lanes come in pairs. Price them separately and you lose money going out, then lose the return load to whoever discounts it.</p>
+
+<h2 id="the-top-of-the-curve-is-flat">The top of the curve is flat</h2>
+
+<p>Every pricing review comes back to one question: price higher and win less, or price lower and win more. The simulator, <code>simulate.py</code>, answers it on a toy market. It builds a book of 500 shipments across the fourteen lanes and six truck types, draws a market rate for each load from our cost plus random noise, then sweeps our price from 1.00x to 1.30x of cost. At each level it estimates the chance of winning every load and adds up the expected profit.</p>
+
+<figure class="chart">
+  <figcaption>Expected profit and win rate at 16 price levels, 500 simulated shipments, seed 42. The shaded band, 1.18x to 1.26x, is every level within 5% of the peak; the vertical rule marks the peak at 1.22x.</figcaption>
+  <svg width="100%" height="374" role="img" aria-label="Two line charts sharing one x axis, price as a multiple of cost from 1.00x to 1.30x. Expected profit rises from 0 at 1.00x to a peak of 27,751 at 1.22x, then eases to 25,340 at 1.30x. Every level from 1.18x to 1.26x is within 5% of the peak. Win rate falls from 71.2% at 1.00x to 32.7% at 1.22x and 21.8% at 1.30x.">
+    <rect x="56%" y="56" width="17.33%" height="110" fill="var(--accent)" fill-opacity="0.1"/>
+    <rect x="56%" y="214" width="17.33%" height="110" fill="var(--accent)" fill-opacity="0.1"/>
+    <line x1="17%" y1="166" x2="82%" y2="166" stroke="var(--muted)" stroke-width="1" stroke-opacity="0.5"/>
+    <text x="17%" y="170.5" dx="-6" font-size="13" fill="var(--muted)" text-anchor="end">0</text>
+    <line x1="17%" y1="129.33" x2="82%" y2="129.33" stroke="var(--line)" stroke-width="1"/>
+    <text x="17%" y="133.83" dx="-6" font-size="13" fill="var(--muted)" text-anchor="end">10,000</text>
+    <line x1="17%" y1="92.67" x2="82%" y2="92.67" stroke="var(--line)" stroke-width="1"/>
+    <text x="17%" y="97.17" dx="-6" font-size="13" fill="var(--muted)" text-anchor="end">20,000</text>
+    <line x1="17%" y1="56" x2="82%" y2="56" stroke="var(--line)" stroke-width="1"/>
+    <text x="17%" y="60.5" dx="-6" font-size="13" fill="var(--muted)" text-anchor="end">30,000</text>
+    <line x1="17%" y1="324" x2="82%" y2="324" stroke="var(--muted)" stroke-width="1" stroke-opacity="0.5"/>
+    <text x="17%" y="328.5" dx="-6" font-size="13" fill="var(--muted)" text-anchor="end">0%</text>
+    <line x1="17%" y1="296.5" x2="82%" y2="296.5" stroke="var(--line)" stroke-width="1"/>
+    <text x="17%" y="301" dx="-6" font-size="13" fill="var(--muted)" text-anchor="end">20%</text>
+    <line x1="17%" y1="269" x2="82%" y2="269" stroke="var(--line)" stroke-width="1"/>
+    <text x="17%" y="273.5" dx="-6" font-size="13" fill="var(--muted)" text-anchor="end">40%</text>
+    <line x1="17%" y1="241.5" x2="82%" y2="241.5" stroke="var(--line)" stroke-width="1"/>
+    <text x="17%" y="246" dx="-6" font-size="13" fill="var(--muted)" text-anchor="end">60%</text>
+    <line x1="17%" y1="214" x2="82%" y2="214" stroke="var(--line)" stroke-width="1"/>
+    <text x="17%" y="218.5" dx="-6" font-size="13" fill="var(--muted)" text-anchor="end">80%</text>
+    <text x="0" y="16" font-size="14" fill="currentColor" font-weight="600">Expected profit</text>
+    <text x="0" y="200" font-size="14" fill="currentColor" font-weight="600">Win rate</text>
+    <line x1="56%" y1="46" x2="73.33%" y2="46" stroke="var(--muted)" stroke-width="1"/>
+    <line x1="56%" y1="46" x2="56%" y2="51" stroke="var(--muted)" stroke-width="1"/>
+    <line x1="73.33%" y1="46" x2="73.33%" y2="51" stroke="var(--muted)" stroke-width="1"/>
+    <text x="64.67%" y="38" font-size="13" fill="var(--muted)" text-anchor="middle">Within 5% of peak</text>
+    <line x1="64.67%" y1="64.25" x2="64.67%" y2="324" stroke="var(--muted)" stroke-width="1"/>
+    <svg x="17%" y="56" width="65%" height="110" viewBox="0 0 1000 1000" preserveAspectRatio="none" overflow="visible"><polyline points="0,1000 66.67,826.37 133.33,670.57 200,533.27 266.67,414.93 333.33,315.5 400,234.63 466.67,171.6 533.33,125.47 600,94.93 666.67,78.63 733.33,74.97 800,82.43 866.67,99.33 933.33,124.13 1000,155.33" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>
+    <svg x="17%" y="214" width="65%" height="110" viewBox="0 0 1000 1000" preserveAspectRatio="none" overflow="visible"><polyline points="0,110 66.67,152.5 133.33,195 200,240 266.67,285 333.33,331.25 400,376.25 466.67,422.5 533.33,466.25 600,510 666.67,551.25 733.33,591.25 800,628.75 866.67,663.75 933.33,697.5 1000,727.5" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>
+    <circle cx="17%" cy="166" r="4" fill="var(--accent)" stroke="var(--bg)" stroke-width="2"/>
+    <circle cx="17%" cy="226.1" r="4" fill="var(--accent)" stroke="var(--bg)" stroke-width="2"/>
+    <circle cx="64.67%" cy="64.25" r="4.5" fill="var(--accent)" stroke="var(--bg)" stroke-width="2"/>
+    <circle cx="64.67%" cy="279.04" r="4.5" fill="var(--accent)" stroke="var(--bg)" stroke-width="2"/>
+    <circle cx="82%" cy="73.09" r="4" fill="var(--accent)" stroke="var(--bg)" stroke-width="2"/>
+    <circle cx="82%" cy="294.02" r="4" fill="var(--accent)" stroke="var(--bg)" stroke-width="2"/>
+    <text x="64.67%" y="88.25" dx="-7" font-size="13" fill="currentColor" text-anchor="end" stroke="var(--bg)" stroke-width="4" stroke-linejoin="round" paint-order="stroke">27,751</text>
+    <text x="82%" y="77.59" dx="7" font-size="13" fill="currentColor">25,340</text>
+    <text x="17%" y="217.1" dx="8" font-size="13" fill="currentColor" stroke="var(--bg)" stroke-width="4" stroke-linejoin="round" paint-order="stroke">71.2%</text>
+    <text x="64.67%" y="270.04" dx="7" font-size="13" fill="currentColor" stroke="var(--bg)" stroke-width="4" stroke-linejoin="round" paint-order="stroke">32.7%</text>
+    <text x="82%" y="298.52" dx="7" font-size="13" fill="currentColor">21.8%</text>
+    <line x1="17%" y1="324" x2="17%" y2="329" stroke="var(--muted)" stroke-width="1"/>
+    <text x="17%" y="344" font-size="13" fill="var(--muted)" text-anchor="middle">1.00x</text>
+    <line x1="38.67%" y1="324" x2="38.67%" y2="329" stroke="var(--muted)" stroke-width="1"/>
+    <text x="38.67%" y="344" font-size="13" fill="var(--muted)" text-anchor="middle">1.10x</text>
+    <line x1="64.67%" y1="324" x2="64.67%" y2="329" stroke="var(--muted)" stroke-width="1"/>
+    <text x="64.67%" y="344" font-size="13" fill="currentColor" text-anchor="middle" font-weight="600">1.22x</text>
+    <line x1="82%" y1="324" x2="82%" y2="329" stroke="var(--muted)" stroke-width="1"/>
+    <text x="82%" y="344" font-size="13" fill="var(--muted)" text-anchor="middle">1.30x</text>
+    <text x="49.5%" y="366" font-size="13" fill="var(--muted)" text-anchor="middle">Price as a multiple of cost</text>
+    <rect x="14.83%" y="56" width="4.33%" height="268" fill="none" pointer-events="all"><title>1.00x cost: expected profit 0, win rate 71.2%</title></rect>
+    <rect x="19.17%" y="56" width="4.33%" height="268" fill="none" pointer-events="all"><title>1.02x cost: expected profit 5,209, win rate 67.8%</title></rect>
+    <rect x="23.5%" y="56" width="4.33%" height="268" fill="none" pointer-events="all"><title>1.04x cost: expected profit 9,883, win rate 64.4%</title></rect>
+    <rect x="27.83%" y="56" width="4.33%" height="268" fill="none" pointer-events="all"><title>1.06x cost: expected profit 14,002, win rate 60.8%</title></rect>
+    <rect x="32.17%" y="56" width="4.33%" height="268" fill="none" pointer-events="all"><title>1.08x cost: expected profit 17,552, win rate 57.2%</title></rect>
+    <rect x="36.5%" y="56" width="4.33%" height="268" fill="none" pointer-events="all"><title>1.10x cost: expected profit 20,535, win rate 53.5%</title></rect>
+    <rect x="40.83%" y="56" width="4.33%" height="268" fill="none" pointer-events="all"><title>1.12x cost: expected profit 22,961, win rate 49.9%</title></rect>
+    <rect x="45.17%" y="56" width="4.33%" height="268" fill="none" pointer-events="all"><title>1.14x cost: expected profit 24,852, win rate 46.2%</title></rect>
+    <rect x="49.5%" y="56" width="4.33%" height="268" fill="none" pointer-events="all"><title>1.16x cost: expected profit 26,236, win rate 42.7%</title></rect>
+    <rect x="53.83%" y="56" width="4.33%" height="268" fill="none" pointer-events="all"><title>1.18x cost: expected profit 27,152, win rate 39.2%</title></rect>
+    <rect x="58.17%" y="56" width="4.33%" height="268" fill="none" pointer-events="all"><title>1.20x cost: expected profit 27,641, win rate 35.9%</title></rect>
+    <rect x="62.5%" y="56" width="4.33%" height="268" fill="none" pointer-events="all"><title>1.22x cost: expected profit 27,751, win rate 32.7%</title></rect>
+    <rect x="66.83%" y="56" width="4.33%" height="268" fill="none" pointer-events="all"><title>1.24x cost: expected profit 27,527, win rate 29.7%</title></rect>
+    <rect x="71.17%" y="56" width="4.33%" height="268" fill="none" pointer-events="all"><title>1.26x cost: expected profit 27,020, win rate 26.9%</title></rect>
+    <rect x="75.5%" y="56" width="4.33%" height="268" fill="none" pointer-events="all"><title>1.28x cost: expected profit 26,276, win rate 24.2%</title></rect>
+    <rect x="79.83%" y="56" width="4.33%" height="268" fill="none" pointer-events="all"><title>1.30x cost: expected profit 25,340, win rate 21.8%</title></rect>
+  </svg>
+  <details>
+    <summary>Data</summary>
+    <table>
+      <caption><code>simulate.py</code> output, 500 shipments, seed 42</caption>
+      <thead>
+        <tr><th scope="col">Price / cost</th><th scope="col">Win rate</th><th scope="col">Expected profit</th><th scope="col">Below peak</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">1.00x</th><td>71.2%</td><td>0</td><td>100.0%</td></tr>
+        <tr><th scope="row">1.02x</th><td>67.8%</td><td>5,209</td><td>81.2%</td></tr>
+        <tr><th scope="row">1.04x</th><td>64.4%</td><td>9,883</td><td>64.4%</td></tr>
+        <tr><th scope="row">1.06x</th><td>60.8%</td><td>14,002</td><td>49.5%</td></tr>
+        <tr><th scope="row">1.08x</th><td>57.2%</td><td>17,552</td><td>36.8%</td></tr>
+        <tr><th scope="row">1.10x</th><td>53.5%</td><td>20,535</td><td>26.0%</td></tr>
+        <tr><th scope="row">1.12x</th><td>49.9%</td><td>22,961</td><td>17.3%</td></tr>
+        <tr><th scope="row">1.14x</th><td>46.2%</td><td>24,852</td><td>10.4%</td></tr>
+        <tr><th scope="row">1.16x</th><td>42.7%</td><td>26,236</td><td>5.5%</td></tr>
+        <tr><th scope="row">1.18x</th><td>39.2%</td><td>27,152</td><td>2.2%</td></tr>
+        <tr><th scope="row">1.20x</th><td>35.9%</td><td>27,641</td><td>0.4%</td></tr>
+        <tr><th scope="row">1.22x</th><td>32.7%</td><td>27,751</td><td>peak</td></tr>
+        <tr><th scope="row">1.24x</th><td>29.7%</td><td>27,527</td><td>0.8%</td></tr>
+        <tr><th scope="row">1.26x</th><td>26.9%</td><td>27,020</td><td>2.6%</td></tr>
+        <tr><th scope="row">1.28x</th><td>24.2%</td><td>26,276</td><td>5.3%</td></tr>
+        <tr><th scope="row">1.30x</th><td>21.8%</td><td>25,340</td><td>8.7%</td></tr>
+      </tbody>
+    </table>
+  </details>
+</figure>
+
+<p>At 1.00x we win 71.2% of loads at zero profit, a fine strategy for a charity. Profit climbs until 1.22x. There we win 32.7% of loads, about a third, and expected profit tops out at 27,751. Past that, each load we win earns more and we win too few of them. At 1.30x, the fattest margin in the sweep, profit is back down to 25,340.</p>
+
+<blockquote>Volume times margin is the business. Either one alone is a vanity metric.</blockquote>
+
+<p>The shape matters more than the peak. Every level from 1.18x to 1.26x lands within 5% of the peak, a band five price levels wide. Across it the win rate slides from 39.2% to 26.9%, while profit never falls more than 2.6% below the top. Step outside it in either direction and the loss passes 5%. A flat top is no accident: at the peak the slope is zero, so small moves either side cost little. What the simulator adds is how wide this top is.</p>
+
+<p>Where the peak sits depends on numbers I chose: an elasticity of 0.10 and a market drawn as our cost plus noise. Change either and the peak moves. Anyone arguing the third decimal of that multiplier is arguing with my assumptions.</p>
+
+<p>So inside the band, price the relationship. A shipper who gives you steady volume, or fills a backhaul you would otherwise run empty, gets the low end, and you win more of their loads. A one-off spot request gets the high end. My rule: show the band to whoever owns the account, let them choose inside it, and make anything below it a decision someone signs.</p>
+
+<h2 id="what-fourteen-lanes-cannot-tell-you">What fourteen lanes cannot tell you</h2>
+
+<p>The repo is not a machine learning model, on purpose. With fourteen lanes of mock data, learned pricing would be theater. A model fitted to invented lanes would only learn my assumptions back.</p>
+
+<p>A real pricing desk needs what this repo fakes. Start with won and lost bid history by lane, truck and customer, the single most underrated dataset in freight. My simulator has random noise where that history should be. From it you measure elasticity per segment, instead of trusting one constant I picked. The constants at the top of <code>rates.py</code>, from fuel share to target margin, need a named owner and a change log, because they are pricing policy, not code. And the margin floor has to survive rule changes. Mine exists even though the current config can never trigger it.</p>
+
+<p>When learned pricing does arrive, it has to beat this baseline line item by line item, so the quote stays a list someone can argue with. The model can find the peak. Choosing a point inside the band is a commercial decision, and it belongs to someone who knows the customer's name.</p>
+</div>
+</div>
+<footer class="ef g">
+<div class="body">
+<div class="wa">
+<p class="sc">The companion repo</p>
+<p>Written alongside <a href="https://github.com/i-am-amankishore/freight-rate-simulator" target="_blank" rel="noopener">freight-rate-simulator<span class="vh"> (opens in a new tab)</span></a>, the pricing engine and simulator this essay describes: standard-library Python, mock data, no dependencies. More on <a href="../">my homepage</a> and on <a href="https://www.linkedin.com/in/i-am-amankishore" target="_blank" rel="noopener">LinkedIn<span class="vh"> (opens in a new tab)</span></a>.</p>
+</div>
+<h2 class="mh">More essays</h2>
+<ul class="es">
+<li><h3><a href="why-agents-need-evals.html">Why agents need evals</a></h3><p class="em">Essay, 4 minute read</p><p>Most agent demos show you the run that worked. This essay is about the runs they leave out, and why accuracy is the wrong number to gate a release on.</p></li>
+<li><h3><a href="money-never-floats.html">Money never floats</a></h3><p class="em">Essay, 5 minute read</p><p>What a double-entry ledger for carrier payouts teaches: derive balances, never store them, and check the trial balance per currency, because converting first hides real imbalances behind FX rounding.</p></li>
+</ul>
+<p class="home"><a class="btn" href="../">Back to the homepage</a><a class="tl" href="../#writing">All writing</a></p>
+</div>
+</footer>
+</div>
+</article>
+</main>
+<footer class="ftr"><div class="wrap"><p>Built by hand, no framework, loads in under a second.</p><a class="tl" href="#top">Back to top</a></div></footer>
+<script>
+(function () {
+'use strict';
+var d = document, root = d.documentElement;
+function each(list, fn) { Array.prototype.forEach.call(list, fn); }
+var menu = d.querySelector('.menu');
+if (menu) {
+menu.addEventListener('click', function (e) { if (e.target.closest('a')) menu.open = false; });
+d.addEventListener('keydown', function (e) {
+if (e.key === 'Escape' && menu.open) { menu.open = false; menu.querySelector('summary').focus(); }
+});
+d.addEventListener('click', function (e) { if (menu.open && !menu.contains(e.target)) menu.open = false; });
+menu.addEventListener('focusout', function (e) { if (menu.open && e.relatedTarget && !menu.contains(e.relatedTarget)) menu.open = false; });
+}
+var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+var tbs = d.querySelectorAll('.theme');
+function cur() { return root.getAttribute('data-theme') || (mq && mq.matches ? 'dark' : 'light'); }
+function sync() {
+var label = 'Switch to ' + (cur() === 'dark' ? 'light' : 'dark') + ' theme';
+each(tbs, function (b) {
+b.hidden = false;
+var t = b.querySelector('.tt');
+if (t) t.textContent = label; else b.setAttribute('aria-label', label);
+});
+if (root.hasAttribute('data-theme')) {
+var c = getComputedStyle(d.body).backgroundColor;
+each(d.querySelectorAll('meta[name="theme-color"]'), function (m) { m.setAttribute('content', c); });
+}
+}
+each(tbs, function (b) {
+b.addEventListener('click', function () {
+var next = cur() === 'dark' ? 'light' : 'dark';
+root.setAttribute('data-theme', next);
+try { localStorage.setItem('theme', next); } catch (e) {}
+sync();
+});
+});
+if (mq && mq.addEventListener) mq.addEventListener('change', sync);
+sync();
+})();
+</script>
+</body>
+</html>

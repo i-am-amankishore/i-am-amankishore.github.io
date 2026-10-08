@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Why agents need evals | Aman Kishore</title>
-<meta name="description" content="An essay by Aman Kishore on why the eval harness, not the model, is what makes an AI agent safe to ship.">
+<title>Money never floats | Aman Kishore</title>
+<meta name="description" content="Decimal everywhere, balances derived from entries, a trial balance checked per currency: what a double-entry ledger for carrier payouts teaches.">
 <meta name="author" content="Aman Kishore">
-<link rel="canonical" href="https://i-am-amankishore.github.io/essays/why-agents-need-evals.html">
+<link rel="canonical" href="https://i-am-amankishore.github.io/essays/money-never-floats.html">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <meta name="color-scheme" content="light dark">
@@ -14,21 +14,21 @@
 <meta name="theme-color" content="#1A1916" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Aman Kishore">
-<meta property="og:url" content="https://i-am-amankishore.github.io/essays/why-agents-need-evals.html">
-<meta property="og:title" content="Why agents need evals">
-<meta property="og:description" content="An essay by Aman Kishore on why the eval harness, not the model, is what makes an AI agent safe to ship.">
+<meta property="og:url" content="https://i-am-amankishore.github.io/essays/money-never-floats.html">
+<meta property="og:title" content="Money never floats">
+<meta property="og:description" content="Decimal everywhere, balances derived from entries, a trial balance checked per currency: what a double-entry ledger for carrier payouts teaches.">
 <meta property="og:image" content="https://i-am-amankishore.github.io/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Aman Kishore, Head of Product at TruKKer">
 <meta property="article:author" content="Aman Kishore">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Why agents need evals">
-<meta name="twitter:description" content="An essay by Aman Kishore on why the eval harness, not the model, is what makes an AI agent safe to ship.">
+<meta name="twitter:title" content="Money never floats">
+<meta name="twitter:description" content="Decimal everywhere, balances derived from entries, a trial balance checked per currency: what a double-entry ledger for carrier payouts teaches.">
 <meta name="twitter:image" content="https://i-am-amankishore.github.io/og.png">
 <meta name="twitter:image:alt" content="Aman Kishore, Head of Product at TruKKer">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "Why agents need evals", "description": "An essay by Aman Kishore on why the eval harness, not the model, is what makes an AI agent safe to ship.", "url": "https://i-am-amankishore.github.io/essays/why-agents-need-evals.html", "mainEntityOfPage": "https://i-am-amankishore.github.io/essays/why-agents-need-evals.html", "image": "https://i-am-amankishore.github.io/og.png", "inLanguage": "en", "timeRequired": "PT4M", "dateModified": "2026-10-08", "author": {"@type": "Person", "name": "Aman Kishore", "jobTitle": "Head of Product", "worksFor": {"@type": "Organization", "name": "TruKKer"}, "url": "https://i-am-amankishore.github.io/", "sameAs": ["https://www.linkedin.com/in/i-am-amankishore", "https://github.com/i-am-amankishore"]}, "publisher": {"@type": "Person", "name": "Aman Kishore", "url": "https://i-am-amankishore.github.io/"}, "isPartOf": {"@type": "WebSite", "name": "Aman Kishore", "url": "https://i-am-amankishore.github.io/"}, "about": {"@type": "SoftwareSourceCode", "name": "inquiry-triage-agent", "codeRepository": "https://github.com/i-am-amankishore/inquiry-triage-agent"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "Money never floats", "description": "Decimal everywhere, balances derived from entries, a trial balance checked per currency: what a double-entry ledger for carrier payouts teaches.", "url": "https://i-am-amankishore.github.io/essays/money-never-floats.html", "mainEntityOfPage": "https://i-am-amankishore.github.io/essays/money-never-floats.html", "image": "https://i-am-amankishore.github.io/og.png", "inLanguage": "en", "timeRequired": "PT5M", "dateModified": "2026-10-08", "author": {"@type": "Person", "name": "Aman Kishore", "jobTitle": "Head of Product", "worksFor": {"@type": "Organization", "name": "TruKKer"}, "url": "https://i-am-amankishore.github.io/", "sameAs": ["https://www.linkedin.com/in/i-am-amankishore", "https://github.com/i-am-amankishore"]}, "publisher": {"@type": "Person", "name": "Aman Kishore", "url": "https://i-am-amankishore.github.io/"}, "isPartOf": {"@type": "WebSite", "name": "Aman Kishore", "url": "https://i-am-amankishore.github.io/"}, "about": {"@type": "SoftwareSourceCode", "name": "settlement-engine", "codeRepository": "https://github.com/i-am-amankishore/settlement-engine"}}
 </script>
 <script>document.documentElement.classList.remove("nojs");try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <style>
@@ -187,42 +187,143 @@ tfoot tr:first-child>*{border-top:1px solid var(--ink)}
 <article class="post">
 <div class="wrap">
 <header class="eh g">
-<div class="rail"><p class="sc kick">Essay · AI agents</p></div>
+<div class="rail"><p class="sc kick">Essay · Money rails</p></div>
 <div class="body">
-<h1>Why agents need evals</h1>
-<p class="by"><span>Aman Kishore, Head of Product at TruKKer</span><span>4 minute read</span></p>
+<h1>Money never floats</h1>
+<p class="by"><span>Aman Kishore, Head of Product at TruKKer</span><span>5 minute read</span></p>
 </div>
 </header>
 <div class="g eb">
-<nav class="rail toc" aria-label="In this essay"><p class="sc">In this essay</p><ol><li><a href="#the-number-that-decides-whether-you-ship">The number that decides whether you ship</a></li><li><a href="#evals-turn-opinions-into-decisions">Evals turn opinions into decisions</a></li><li><a href="#what-this-means-if-you-lead-product">What this means if you lead product</a></li></ol></nav>
+<nav class="rail toc" aria-label="In this essay"><p class="sc">In this essay</p><ol><li><a href="#derive-balances-never-store-them">Derive balances, never store them</a></li><li><a href="#the-imbalance-that-fx-rounding-hid">The imbalance that FX rounding hid</a></li><li><a href="#pay-at-milestones-to-the-cent">Pay at milestones, to the cent</a></li><li><a href="#dso-is-a-ledger-question">DSO is a ledger question</a></li><li><a href="#the-spec-is-eight-tests-long">The spec is eight tests long</a></li></ol></nav>
 <div class="body prose">
-<p>Most AI agent demos are lies of omission. They show you the run that worked. The founder types a question, the agent answers beautifully, the room nods. What the demo never shows is the other forty runs, the ones where the agent confidently did the wrong thing to someone who was not in the room to catch it. In a demo, a wrong answer is a laugh. In production, a wrong answer is a customer.</p>
-<p>The gap between those two worlds is not a better model. It is an eval.</p>
-<p>An eval is a fixed set of labeled cases and a script that measures how the agent does against them. It sounds like testing because it is, but the mindset is different. A unit test asks "did this function return 4." An eval asks "of the hundred messages a customer might send, how many did we handle correctly, and of the ones we got wrong, how badly." That second clause is where the product judgment lives.</p>
-<h2 id="the-number-that-decides-whether-you-ship">The number that decides whether you ship</h2>
-<p>I build agents for a freight marketplace, so let me use one. An inbound triage agent reads a message, decides what it is about, and either answers it or routes it to a human. Accuracy sounds like the metric that matters. It is not. The metric that matters is what happens on the misses.</p>
-<p>Consider two agents that are both 92% accurate. The first one, when it is wrong, sends a slightly off but harmless reply. The second one, when it is wrong, auto-answers a furious customer who asked about a missing payment. Same accuracy, completely different products. One is shippable. The other will lose you an account by Friday.</p>
-<blockquote>Overall accuracy is the number people quote. Escalation recall is the number that decides whether you ship.</blockquote>
-<p>So the eval I actually gate on is not accuracy. It is escalation recall: of the messages that must reach a human, complaints and payment disputes, how many did. That number has to be 1.00. Not 0.98. If the agent auto-answers even one angry customer about their money, the release does not go out, and the eval script says so in plain words: <code>DO NOT SHIP</code>.</p>
-<h2 id="evals-turn-opinions-into-decisions">Evals turn opinions into decisions</h2>
-<p>Before I had an eval, every argument about the agent was a matter of taste. Someone felt it was too aggressive. Someone else felt it was too timid. We would tune a prompt, watch a few examples, and convince ourselves. It was theater with a keyboard.</p>
-<p>The first time I ran a real eval on that triage agent, it scored 0.90 on escalation recall, and the reason was specific: one invoice dispute had been classified as a routine status check and auto-answered. I had not noticed in casual testing because the wording looked calm. The eval noticed. The fix was a guardrail that routes anything mentioning money to a human even when the classifier is confident it is routine. Policy beat classification, and I only knew to write that policy because a labeled case caught the exact failure. The eval paid for itself on its first run.</p>
-<p>That is the real value. An eval converts vibes into a decision you can defend. It lets you say "we do not ship below 1.00 escalation recall" and have that mean something, the same way a company that says it cares about quality but ships anyway does not actually care about quality. The commitment is only real if something can fail it.</p>
-<h2 id="what-this-means-if-you-lead-product">What this means if you lead product</h2>
-<p>You do not need to write the eval yourself, but you do need to insist it exists, and you need to be the one who decides what the gate is. That decision is not technical. Choosing that escalation recall must be perfect while accuracy can sit at 0.92 is a statement about which mistakes your business can survive and which it cannot. That is product strategy wearing a lab coat, and handing it to whoever happens to be tuning the prompt is how you end up with an agent optimized for the demo instead of the customer.</p>
-<p>The uncomfortable part is that a good eval will slow you down. It will block releases you wanted to ship and force conversations you wanted to skip. That friction is the feature. An agent with no eval is not faster, it is just failing where you cannot see it yet. The teams that win with AI are not the ones with the best model. They are the ones willing to write down, in a file that can go red, what wrong is not allowed to look like.</p>
+<p>Payment systems rarely lose money in one dramatic failure. They lose it a cent at a time. A carrier's cost is split three ways, each share is rounded on its own, and the carrier ends up owed a cent more than the agreed cost. A payout goes out against a cached balance that missed this morning's correction. Neither is worth a meeting. Over enough orders they add up to a month-end close that will not tie out, and a team whose whole job is finding out why.</p>
+
+<blockquote>Cent leaks in payment systems are how you end up with a reconciliation team.</blockquote>
+
+<p>I built settlement-engine to show the rules that keep that team small. It is a public repo on mock data: milestone-based carrier payouts, a multi-currency double-entry ledger, receivables aging and a DSO report, in standard-library Python with eight tests.</p>
+
+<p>The first rule is the title. Money never floats. Most languages store a number like 2.675 as a float, a binary approximation, and the stored value sits a hair below 2.675. Ask Python to round it to two places and you get 2.67. That is a cent gone, in a direction nobody chose. In the engine every amount is a <code>Decimal</code>, rounded to the cent, half up, the moment it enters the ledger. The rounding is a rule somebody wrote down.</p>
+
+<h2 id="derive-balances-never-store-them">Derive balances, never store them</h2>
+
+<p>The ledger keeps entries and nothing else. Every entry debits one account and credits another for the same amount, so money can move but cannot be created or destroyed. When a carrier asks what they are owed, the engine adds up their entries. There is no balance column to update, so there is no balance column to drift.</p>
+
+<p>A stored balance is a second copy of the truth. Two copies of the truth eventually disagree, and then somebody has to reconcile them. Deriving a balance costs a computation on every read. In return, the ledger cannot disagree with itself. That trade is cheap. At real volume you add a cache, but the cache is rebuilt from entries and nobody edits it by hand.</p>
+
+<h2 id="the-imbalance-that-fx-rounding-hid">The imbalance that FX rounding hid</h2>
+
+<p>The trial balance is the simplest check in accounting: add up every account and the total must be zero. My first version of that check converted every balance to US dollars and then added them up. It hid a real imbalance behind FX rounding. I found the bug while building the repo, and the fix was to check each currency on its own.</p>
+
+<p>The mechanism is dull, which is why it hides so well. Each balance is converted and rounded to the cent before the totals meet. At the demo rate a tenge is worth 0.0021 dollars, which rounds to zero cents. A book can be a tenge out of balance and still convert to a perfect zero. The report says balanced. The book is not.</p>
+
+<p>Now the trial balance test posts entries in dirhams and tenge and asserts that each currency nets to exactly zero on its own. Reporting can convert to dollars. Control never should.</p>
+
+<h2 id="pay-at-milestones-to-the-cent">Pay at milestones, to the cent</h2>
+
+<p>In freight, carriers wait weeks past proof of delivery to get paid while customers stretch their own terms. Milestone settlements attack that gap. The engine accrues a carrier's earnings as the job happens: 30% at pickup, 50% at proof of delivery and 20% when the invoice is approved. Payouts can go out early against earnings already on the books, and the engine refuses any payout larger than the accrued balance.</p>
+
+<figure class="ledger-excerpt">
+  <figcaption>One order from the demo book: ORD-1003 for DesertLine Transport, June 2026, from the carrier's statement of account in the report output. Each line debits <code>expense:freight_cost</code> and credits the carrier's payable. The last line is the cost minus what had already accrued, so the three lines sum to the agreed cost.</figcaption>
+  <table>
+    <thead>
+      <tr><th scope="col">Date</th><th scope="col">Milestone</th><th scope="col">SAR</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>14&nbsp;Jun</td><td>Pickup, 30%</td><td>3,465.30</td></tr>
+      <tr><td>18&nbsp;Jun</td><td>Proof of delivery, 50%</td><td>5,775.50</td></tr>
+      <tr><td>23&nbsp;Jun</td><td>Invoice approved, 20%</td><td>2,310.20</td></tr>
+    </tbody>
+    <tfoot>
+      <tr><th scope="row" colspan="2">Total, 100%</th><td>11,551.00</td></tr>
+    </tfoot>
+  </table>
+</figure>
+
+<p>That order splits cleanly. Plenty do not. Take a carrier cost of 9,999.99. 30% of it is 2,999.997, which rounds to 3,000.00. 50% is 4,999.995, which rounds to 5,000.00. 20% is 1,999.998, which rounds to 2,000.00. Add them up and the carrier has accrued 10,000.00 on a 9,999.99 job. Rounding each share on its own leaks a cent like that whenever the cost ends in 3, 5 or 9 cents: three costs in ten.</p>
+
+<p>So the final milestone never computes a percentage. It takes the cost minus everything already accrued, posts 1,999.99, and the three accruals add up to the cost exactly. A pickup that fires twice is a data bug upstream, and the worst response is a quiet second accrual, so the engine refuses it, loudly. The production version needs idempotency keys on every event, because with enough volume duplicates stop being rare.</p>
+
+<h2 id="dso-is-a-ledger-question">DSO is a ledger question</h2>
+
+<p>The demo runs a seeded four-month book: 18 orders, four carriers in four currencies, partial payouts, customer invoices and collections. It produces 65 ledger entries and a trial balance that holds in every currency. Open receivables come to 16,630.44 USD on 24,271.21 USD invoiced over 130 days, so days sales outstanding is 89.1 days. The aging report converts to dollars, which is fine. It is reporting.</p>
+
+<figure class="aging-chart">
+  <figcaption>Open receivables by age in the demo book, in USD, as of 1 Jul 2026. Older buckets carry the stronger color. Open AR 16,630.44 USD on 24,271.21 USD invoiced over 130 days: DSO 89.1 days.</figcaption>
+  <svg role="img" aria-label="Bar chart of open receivables by age, in USD. 0 to 30 days: 6,319.41. 31 to 60 days: 2,551.68. 61 to 90 days: 5,449.56. 91 or more days: 2,309.79." viewBox="0 0 360 156" width="100%" height="156" preserveAspectRatio="xMinYMid meet" font-size="14">
+    <line x1="114" y1="6" x2="114" y2="150" stroke="var(--line)" stroke-width="1"/>
+    <g>
+      <title>0 to 30 days: 6,319.41 USD open</title>
+      <rect x="0" y="6" width="360" height="36" fill="var(--bg)" fill-opacity="0"/>
+      <path d="M114 14H284A4 4 0 0 1 288 18V30A4 4 0 0 1 284 34H114Z" fill="var(--accent)" fill-opacity="0.5"/>
+      <text x="104" y="29" text-anchor="end" fill="var(--muted)">0 to 30 days</text>
+      <text x="296" y="29" fill="currentColor">6,319.41</text>
+    </g>
+    <g>
+      <title>31 to 60 days: 2,551.68 USD open</title>
+      <rect x="0" y="42" width="360" height="36" fill="var(--bg)" fill-opacity="0"/>
+      <path d="M114 50H180.3A4 4 0 0 1 184.3 54V66A4 4 0 0 1 180.3 70H114Z" fill="var(--accent)" fill-opacity="0.66"/>
+      <text x="104" y="65" text-anchor="end" fill="var(--muted)">31 to 60 days</text>
+      <text x="192.3" y="65" fill="currentColor">2,551.68</text>
+    </g>
+    <g>
+      <title>61 to 90 days: 5,449.56 USD open</title>
+      <rect x="0" y="78" width="360" height="36" fill="var(--bg)" fill-opacity="0"/>
+      <path d="M114 86H260A4 4 0 0 1 264 90V102A4 4 0 0 1 260 106H114Z" fill="var(--accent)" fill-opacity="0.83"/>
+      <text x="104" y="101" text-anchor="end" fill="var(--muted)">61 to 90 days</text>
+      <text x="272" y="101" fill="currentColor">5,449.56</text>
+    </g>
+    <g>
+      <title>91+ days: 2,309.79 USD open</title>
+      <rect x="0" y="114" width="360" height="36" fill="var(--bg)" fill-opacity="0"/>
+      <path d="M114 122H173.6A4 4 0 0 1 177.6 126V138A4 4 0 0 1 173.6 142H114Z" fill="var(--accent)" fill-opacity="1"/>
+      <text x="104" y="137" text-anchor="end" fill="var(--muted)">91+ days</text>
+      <text x="185.6" y="137" fill="currentColor">2,309.79</text>
+    </g>
+  </svg>
+  <details>
+    <summary>Data</summary>
+    <table>
+      <thead>
+        <tr><th scope="col">Age</th><th scope="col">Open, USD</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">0 to 30 days</th><td>6,319.41</td></tr>
+        <tr><th scope="row">31 to 60 days</th><td>2,551.68</td></tr>
+        <tr><th scope="row">61 to 90 days</th><td>5,449.56</td></tr>
+        <tr><th scope="row">91+ days</th><td>2,309.79</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><th scope="row">Open receivables</th><td>16,630.44</td></tr>
+        <tr><th scope="row">Invoiced over 130 days</th><td>24,271.21</td></tr>
+        <tr><th scope="row">DSO</th><td>89.1 days</td></tr>
+      </tfoot>
+    </table>
+  </details>
+</figure>
+
+<p>DSO is the number a CFO watches, and it is a ledger question before it is a collections question. When invoices and collections are entries, aging is a query. When they sit in separate systems, each with its own balance, aging starts with a reconciliation.</p>
+
+<p>This is the part of the repo closest to my day job. At TruKKer, the FinOps module I delivered, with real-time financial dashboards and workflows, took DSO from 145 days to 95. As Head of Product I transformed fintech and payables there with regulatory-compliant invoicing (ZATCA in Saudi Arabia, Uyumsoft in Turkey, 1C in Kazakhstan) and milestone-based wallet and bank payouts, eliminating payment leakages. Invoicing rules vary enough by country to be their own roadmap. Underneath sit milestone-based vendor settlements and multi-currency payments. None of the repo is company code. All of it reflects how I think.</p>
+
+<h2 id="the-spec-is-eight-tests-long">The spec is eight tests long</h2>
+
+<p>The eight tests in the repo are the product spec for money, written so a machine can check it. The books net to zero in every currency. A negative amount or an unknown currency is refused. Milestones sum to the carrier's cost to the cent, 9,999.99 included. A milestone that fires twice raises an error. A schedule that does not add up to 100% cannot be created. A payout cannot exceed what has accrued. And 100 riyals convert to exactly 26.67 dollars, while a currency with no rate raises an error instead of guessing.</p>
+
+<p>None of those sentences needs an engineer to translate it, and every one of them can fail a build. That is my bar for money logic: if I cannot walk a CFO through it on one screen, it is not done.</p>
+
+<p>If you lead product, leave the code to engineering and keep the sentences. Who absorbs the odd cent is a policy decision. So is how far ahead of the work a carrier can be paid. Make those calls before the first payout, not after the first variance.</p>
 </div>
 </div>
 <footer class="ef g">
 <div class="body">
 <div class="wa">
 <p class="sc">The companion repo</p>
-<p>Written alongside <a href="https://github.com/i-am-amankishore/inquiry-triage-agent" target="_blank" rel="noopener">inquiry-triage-agent<span class="vh"> (opens in a new tab)</span></a>, an agent with the eval harness this essay describes. More on <a href="../">my homepage</a> and on <a href="https://www.linkedin.com/in/i-am-amankishore" target="_blank" rel="noopener">LinkedIn<span class="vh"> (opens in a new tab)</span></a>.</p>
+<p>Written alongside <a href="https://github.com/i-am-amankishore/settlement-engine" target="_blank" rel="noopener">settlement-engine<span class="vh"> (opens in a new tab)</span></a>, a small ledger and settlement engine with the eight invariant tests this essay describes. More on <a href="../">my homepage</a> and on <a href="https://www.linkedin.com/in/i-am-amankishore" target="_blank" rel="noopener">LinkedIn<span class="vh"> (opens in a new tab)</span></a>.</p>
 </div>
 <h2 class="mh">More essays</h2>
 <ul class="es">
+<li><h3><a href="why-agents-need-evals.html">Why agents need evals</a></h3><p class="em">Essay, 4 minute read</p><p>Most agent demos show you the run that worked. This essay is about the runs they leave out, and why accuracy is the wrong number to gate a release on.</p></li>
 <li><h3><a href="explainable-pricing.html">Price the relationship, not the third decimal</a></h3><p class="em">Essay, 5 minute read</p><p>A quote nobody can take apart is a quote nobody trusts. Why every price should be line items a human can argue with, and why expected profit peaks at neither the highest win rate nor the fattest margin.</p></li>
-<li><h3><a href="money-never-floats.html">Money never floats</a></h3><p class="em">Essay, 5 minute read</p><p>What a double-entry ledger for carrier payouts teaches: derive balances, never store them, and check the trial balance per currency, because converting first hides real imbalances behind FX rounding.</p></li>
 </ul>
 <p class="home"><a class="btn" href="../">Back to the homepage</a><a class="tl" href="../#writing">All writing</a></p>
 </div>

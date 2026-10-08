@@ -1,361 +1,1137 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="nojs">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aman Kishore | Head of Product | AI, Logistics, Fintech</title>
-<meta name="description" content="Aman Kishore. Head of Product at TruKKer. Agentic AI in production (EVA, Fatima, Sara), marketplaces, and fintech rails across EMEA and CIS.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aman Kishore | Head of Product, AI, logistics, fintech</title>
+<meta name="description" content="Aman Kishore, Head of Product at TruKKer. Agentic AI, freight marketplaces, fintech and payables across EMEA and CIS. Based in Bangalore.">
+<link rel="canonical" href="https://i-am-amankishore.github.io/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F8F6F1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1A1916" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Aman Kishore">
+<meta property="og:url" content="https://i-am-amankishore.github.io/">
+<meta property="og:title" content="Aman Kishore, Head of Product at TruKKer">
+<meta property="og:description" content="At TruKKer, EVA automated 85% of customer inquiries and DSO went from 145 to 95 days. Try the triage router and its eval gate in your browser.">
+<meta property="og:image" content="https://i-am-amankishore.github.io/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Aman Kishore, Head of Product, TruKKer. I build freight AI that knows when to call a human. AI agents, marketplaces, payment rails, EMEA and CIS.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aman Kishore, Head of Product at TruKKer">
+<meta name="twitter:description" content="At TruKKer, EVA automated 85% of customer inquiries and DSO went from 145 to 95 days. Try the triage router and its eval gate in your browser.">
+<meta name="twitter:image" content="https://i-am-amankishore.github.io/og.png">
+<meta name="twitter:image:alt" content="Aman Kishore, Head of Product, TruKKer. I build freight AI that knows when to call a human. AI agents, marketplaces, payment rails, EMEA and CIS.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Aman Kishore","jobTitle":"Head of Product","description":"Head of Product at TruKKer. Leads Product, Design and BI, reports to the CEO and CTO, and owns product vision, roadmap and delivery across AI automation, fintech, B2C supply platforms and ERP enhancements in EMEA and CIS.","worksFor":{"@type":"Organization","name":"TruKKer"},"address":{"@type":"PostalAddress","addressLocality":"Bangalore","addressCountry":"IN"},"email":"mailto:jayaswal.amk@gmail.com","url":"https://i-am-amankishore.github.io/","sameAs":["https://www.linkedin.com/in/i-am-amankishore","https://github.com/i-am-amankishore"],"alumniOf":{"@type":"CollegeOrUniversity","name":"Haldia Institute of Technology"},"knowsAbout":["Product management","Product strategy","Product design","Agentic AI systems","AI evaluation","Logistics marketplaces","Freight","Fintech","Payments and settlements","ERP","Go-to-market strategy","Business strategy","Data analysis","API and third-party integrations","People management","Process improvement"]}
+</script>
+<script>document.documentElement.classList.remove("nojs");try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <style>
-  :root {
-    --bg: #faf9f6;
-    --ink: #191b1d;
-    --muted: #5c6166;
-    --line: #e6e3dc;
-    --accent: #0f4c5c;
-    --accent-soft: #e7f0f2;
-    --card: #ffffff;
-    --shadow: 0 12px 30px rgba(15, 76, 92, 0.10);
-    --w: 900px;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #131519;
-      --ink: #e9e7e2;
-      --muted: #9aa0a6;
-      --line: #282b31;
-      --accent: #7fc4d4;
-      --accent-soft: #1b2a2f;
-      --card: #191c21;
-      --shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-    }
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    background-image: radial-gradient(1100px 460px at 78% -12%, var(--accent-soft), transparent 62%);
-    color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.65;
-    font-size: 17px;
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .wrap { max-width: var(--w); margin: 0 auto; padding: 0 28px; }
-
-  /* Nav */
-  .nav {
-    position: sticky; top: 0; z-index: 20;
-    background: var(--bg); border-bottom: 1px solid var(--line);
-  }
-  .nav-inner {
-    max-width: var(--w); margin: 0 auto; padding: 13px 28px;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .brand { display: flex; align-items: center; gap: 11px; font-weight: 650; color: var(--ink); font-size: 15px; }
-  .brand:hover { text-decoration: none; }
-  .mono {
-    width: 30px; height: 30px; border-radius: 8px; background: var(--accent);
-    color: var(--bg); display: grid; place-items: center; font-size: 13px; font-weight: 700;
-  }
-  .nav-links { display: flex; gap: 24px; font-size: 14px; font-weight: 500; align-items: center; }
-  .nav-links a { color: var(--muted); }
-  .nav-links a:hover { color: var(--ink); text-decoration: none; }
-  .nav-links .nav-cta { color: var(--accent); font-weight: 600; }
-  @media (max-width: 620px) { .nav-links { display: none; } }
-
-  section, header { scroll-margin-top: 74px; }
-
-  /* Hero */
-  header { padding: 72px 0 52px; }
-  .pill {
-    display: inline-flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 600;
-    color: var(--accent); background: var(--accent-soft); padding: 6px 14px; border-radius: 999px; margin-bottom: 24px;
-  }
-  .pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
-  h1 { font-size: 46px; line-height: 1.08; letter-spacing: -0.025em; margin-bottom: 22px; font-weight: 700; max-width: 15ch; }
-  .lede { font-size: 20px; color: var(--muted); max-width: 60ch; margin-bottom: 30px; }
-  .lede strong { color: var(--ink); font-weight: 600; }
-  .links { display: flex; gap: 22px; flex-wrap: wrap; font-size: 15px; font-weight: 500; }
-
-  /* Stat band */
-  .band-eyebrow {
-    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--muted); font-weight: 600; margin-bottom: 14px;
-  }
-  .numbers {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 1px; background: var(--line); border: 1px solid var(--line);
-    border-radius: 14px; overflow: hidden;
-  }
-  @media (max-width: 560px) { .numbers { grid-template-columns: repeat(2, 1fr); } }
-  .num { background: var(--card); padding: 22px 20px; }
-  .num b { display: block; font-size: 27px; letter-spacing: -0.01em; color: var(--accent); font-weight: 700; }
-  .num span { font-size: 13.5px; color: var(--muted); line-height: 1.45; display: block; margin-top: 5px; }
-
-  /* Section heads */
-  section { padding: 58px 0 8px; }
-  h2 {
-    font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--muted); font-weight: 600; margin-bottom: 6px;
-  }
-  .sec-lead { font-size: 15px; color: var(--muted); margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid var(--line); max-width: 62ch; }
-
-  /* Selected work, editorial rows */
-  .work-item {
-    display: grid; grid-template-columns: 180px 1fr; gap: 28px;
-    padding: 26px 0; border-top: 1px solid var(--line);
-  }
-  .work-item:first-child { border-top: none; padding-top: 4px; }
-  .w-cat { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 600; line-height: 1.5; }
-  .work-item h3 { font-size: 20px; font-weight: 650; margin-bottom: 9px; letter-spacing: -0.01em; }
-  .work-item p { color: var(--muted); font-size: 15.5px; }
-  @media (max-width: 640px) {
-    .work-item { grid-template-columns: 1fr; gap: 8px; padding: 22px 0; }
-  }
-
-  /* Project + writing cards */
-  .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  @media (max-width: 640px) { .projects { grid-template-columns: 1fr; } h1 { font-size: 35px; } }
-  .proj {
-    display: flex; flex-direction: column; gap: 10px;
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 14px; padding: 22px;
-    transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
-  }
-  .proj:hover { border-color: var(--accent); text-decoration: none; transform: translateY(-3px); box-shadow: var(--shadow); }
-  .chip {
-    align-self: flex-start; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
-    font-weight: 600; color: var(--accent); background: var(--accent-soft); padding: 4px 11px; border-radius: 999px;
-  }
-  .proj b { font-size: 17px; color: var(--ink); font-weight: 650; letter-spacing: -0.01em; }
-  .proj .desc { font-size: 14.5px; color: var(--muted); line-height: 1.55; }
-  .proj-foot {
-    margin-top: auto; padding-top: 13px; border-top: 1px solid var(--line);
-    display: flex; justify-content: space-between; align-items: center; gap: 12px;
-  }
-  .proj-foot .proof { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12px; color: var(--muted); }
-  .proj-foot .go { font-size: 13px; font-weight: 600; color: var(--accent); white-space: nowrap; }
-  .proj:hover .go { text-decoration: underline; }
-  .proj-note { font-size: 14.5px; color: var(--muted); margin-top: 20px; }
-
-  /* Principles */
-  .principles { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; }
-  @media (max-width: 640px) { .principles { grid-template-columns: 1fr; } }
-  .principles p { color: var(--muted); }
-  .principles p b { color: var(--ink); font-weight: 600; display: block; margin-bottom: 2px; }
-
-  /* Path */
-  .timeline { display: grid; gap: 2px; font-size: 15.5px; }
-  .trow { display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 18px 0; border-top: 1px solid var(--line); }
-  .trow:first-child { border-top: none; }
-  .trow .when { color: var(--muted); font-size: 14px; padding-top: 2px; }
-  .trow b { font-weight: 600; }
-  .trow span { color: var(--muted); display: block; font-size: 14.5px; margin-top: 3px; }
-  @media (max-width: 640px) { .trow { grid-template-columns: 1fr; gap: 4px; } }
-
-  /* Footer */
-  footer { padding: 64px 0 80px; }
-  .contact-card { background: var(--accent-soft); border-radius: 16px; padding: 38px; }
-  .contact-card h2 { margin-bottom: 10px; }
-  .contact-card p { color: var(--muted); margin-bottom: 24px; max-width: 54ch; font-size: 16px; }
-  .contact-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
-  .btn {
-    display: inline-flex; background: var(--accent); color: var(--bg);
-    padding: 12px 22px; border-radius: 10px; font-weight: 600; font-size: 15px;
-  }
-  .btn:hover { text-decoration: none; opacity: 0.92; }
-  .foot-note { margin-top: 44px; font-size: 13px; color: var(--muted); }
+:root{--paper:#F8F6F1;--paper2:#EFEBE3;--ink:#1D1C1A;--ink2:#57534B;--rule:#D9D3C7;--line:#847E72;--acc:#1E5641;--acc2:#143D2E;--on:#F8F6F1;
+--serif:"Iowan Old Style","Palatino Linotype",Palatino,"URW Palladio L",P052,"Book Antiqua",Georgia,serif;
+--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+--mono:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+--gut:16px;--cg:16px;--h1:clamp(2.5rem,1.6rem + 3.6vw,4.6rem);--h2:clamp(2rem,1.4rem + 2vw,3rem);--h3:clamp(1.5rem,1.2rem + 1vw,2rem);
+--st:clamp(1.1875rem,1.05rem + .5vw,1.4375rem);--fig:clamp(2.25rem,1.6rem + 1.6vw,3.25rem);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--paper:#1A1916;--paper2:#24221E;--ink:#ECE7DD;--ink2:#B4AD9F;--rule:#3A3731;--line:#7A7468;--acc:#8DC4A6;--acc2:#A9D6BD;--on:#11201A;color-scheme:dark}}
+:root[data-theme=dark]{--paper:#1A1916;--paper2:#24221E;--ink:#ECE7DD;--ink2:#B4AD9F;--rule:#3A3731;--line:#7A7468;--acc:#8DC4A6;--acc2:#A9D6BD;--on:#11201A;color-scheme:dark}
+@media(min-width:600px){:root{--gut:32px;--cg:24px}}
+@media(min-width:1100px){:root{--gut:48px;--cg:32px}}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:84px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--sans);-webkit-font-smoothing:antialiased;font-kerning:normal}
+@media(min-width:1100px){body{font-size:1.125rem}}
+h1,h2,h3,h4,h5{margin:0;font-family:var(--serif);font-weight:400;text-wrap:balance}
+p,ul,ol,dl,dd,figure,blockquote{margin:0}
+ul,ol{padding:0;list-style:none}
+p{text-wrap:pretty}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.2em}
+a:hover{color:var(--acc)}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+[hidden]{display:none!important}
+::selection{background:var(--acc);color:var(--on)}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.wrap{max-width:75rem;margin:0 auto;padding:0 var(--gut)}
+.g{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--cg)}
+.g>*{grid-column:1/-1;min-width:0}
+.n{font-family:var(--serif);font-weight:400;font-variant-numeric:lining-nums;letter-spacing:-.01em;color:var(--ink)}
+.to{color:var(--ink2);font-size:.8em;margin:0 .14em}
+.sc{font-family:var(--serif);font-variant-caps:all-small-caps;letter-spacing:.06em;font-size:1.0625rem}
+.hint{color:var(--ink2);font-size:.9375rem;line-height:1.5}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 20px;border:1px solid var(--line);border-radius:2px;background:transparent;color:var(--ink);font:600 1rem/1.2 var(--sans);text-decoration:none;cursor:pointer}
+.btn:hover{border-color:var(--ink);color:var(--ink)}
+.btn-p{background:var(--acc);border-color:var(--acc);color:var(--on)}
+.btn-p:hover{background:var(--acc2);border-color:var(--acc2);color:var(--on)}
+.tl{display:inline-flex;align-items:center;min-height:44px;padding:0 8px;font-weight:600}
+svg.i{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.skip{position:absolute;left:8px;top:-80px;z-index:30;padding:12px 16px;background:var(--ink);color:var(--paper);font-weight:600;text-decoration:none}
+.skip:focus{top:8px;color:var(--paper)}
+.hdr{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--rule)}
+.bar{display:flex;align-items:center;gap:8px;min-height:60px}
+.brand{display:inline-flex;align-items:center;gap:10px;min-height:44px;margin-right:auto;font:400 1.1875rem/1 var(--serif);color:var(--ink);text-decoration:none;white-space:nowrap}
+.mono{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--acc);color:var(--on);font:600 .8125rem/1 var(--serif);letter-spacing:.05em}
+.nav{display:none}
+.nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;color:var(--ink2);font-size:.9375rem;text-decoration:none}
+.nav a:hover{color:var(--ink);text-decoration:underline}
+.bar .btn{min-height:44px;padding:0 14px;font-size:.9375rem;white-space:nowrap}
+.bar .nav-t{display:none}
+.ib{display:inline-grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:2px;background:none;color:var(--ink2);cursor:pointer}
+.ib:hover{color:var(--ink)}
+.ib svg{width:20px;height:20px}
+.menu summary{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid var(--line);border-radius:2px;font-weight:600;font-size:.9375rem;cursor:pointer;list-style:none;user-select:none}
+.menu summary::-webkit-details-marker{display:none}
+.menu .mc,.menu[open] .mo{display:none}
+.menu[open] .mc{display:inline}
+.menu:not([open]) .panel{display:none}
+.panel{position:absolute;left:0;right:0;top:100%;max-height:calc(100vh - 60px);max-height:calc(100dvh - 60px);overflow-y:auto;overscroll-behavior:contain;padding:4px var(--gut) 20px;background:var(--paper);border-bottom:2px solid var(--ink)}
+.panel a{display:flex;align-items:center;min-height:52px;border-bottom:1px solid var(--rule);color:var(--ink);font:400 1.375rem/1.2 var(--serif);text-decoration:none}
+.panel .theme{display:flex;align-items:center;gap:10px;width:100%;min-height:52px;padding:0;border:0;background:none;color:var(--ink2);font:600 .9375rem var(--sans);cursor:pointer}
+.panel .theme svg{width:20px;height:20px}
+@media(min-width:900px){.nav{display:flex}.menu{display:none}.bar{min-height:64px}.bar .nav-t{display:inline-grid}}
+@media(max-width:379px){.brand{font-size:1.0625rem;gap:8px}.mono{width:30px;height:30px}.bar{gap:6px}.bar .btn,.menu summary{padding:0 10px}}
+@media(max-width:339px){.mono{display:none}}
+.nojs .hdr{position:relative}
+.hero{padding:clamp(28px,4.6vw,64px) 0 clamp(28px,3.4vw,44px)}
+.who{font:600 clamp(1.125rem,1rem + .5vw,1.375rem)/1.35 var(--sans)}
+.who i{margin:0 .3em;color:var(--acc);font-style:normal}
+.avail{display:flex;align-items:center;gap:10px;margin:8px 0 clamp(18px,2.4vw,28px);color:var(--acc);font-size:.9375rem;font-weight:600}
+.avail::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:currentColor}
+h1{font-size:var(--h1);line-height:1.04;letter-spacing:-.015em;max-width:12em}
+.dek{margin-top:clamp(18px,2.4vw,28px);max-width:34em;font-family:var(--serif);font-size:var(--st);line-height:1.45}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:clamp(22px,2.8vw,32px)}
+.hm{margin-top:16px;max-width:34em;color:var(--ink2);font-size:.9375rem;line-height:1.55}
+.addr{color:var(--ink);font-weight:600;user-select:all;-webkit-user-select:all}
+.hf{display:grid;grid-template-columns:1fr 1fr;column-gap:var(--cg);margin-top:36px}
+.hf li{padding:14px 0 18px;border-top:1px solid var(--rule);color:var(--ink2);font-size:.9375rem;line-height:1.4}
+.hf .n{display:block;margin-bottom:6px;font-size:var(--fig);line-height:1.05}
+.hfc{padding-top:10px;border-top:1px solid var(--rule);color:var(--ink2);font:italic 400 1rem/1.4 var(--serif)}
+@media(min-width:760px){.hf{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:1100px){.hero .ht{grid-column:1/9}.hero .hfw{grid-column:10/13;padding-top:4px}.hf{grid-template-columns:1fr;margin-top:0}.hf li:first-child{padding-top:0;border-top:0}}
+.glance .g{row-gap:36px;padding-top:clamp(14px,2vw,20px);border-top:2px solid var(--ink)}
+.glance h2,.glance h3{margin-bottom:10px;font-size:1.375rem;line-height:1.25}
+.gl>div,.mk li{display:grid;grid-template-columns:7rem minmax(0,1fr);column-gap:12px;padding:9px 0 10px;border-top:1px solid var(--rule);line-height:1.45}
+.gl dt,.mk b{color:var(--ink2);font-size:.9375rem;font-weight:400}
+.gl dd{font-weight:600}
+.mk span{font-size:.9375rem}
+.mk2{margin-top:18px}
+@media(min-width:760px) and (max-width:1099px){.gl{display:grid;grid-template-columns:1fr 1fr;column-gap:var(--cg)}}
+@media(min-width:1100px){.glance .gla{grid-column:1/8}.glance .wr{grid-column:9/13}.gl>div{grid-template-columns:8.5rem minmax(0,1fr)}}
+.sec{padding-top:clamp(64px,8vw,112px)}
+.sh{margin-bottom:clamp(24px,4vw,48px);padding-top:clamp(14px,2vw,20px);border-top:2px solid var(--ink)}
+.sh h2{font-size:var(--h2);line-height:1.08;letter-spacing:-.01em}
+.intro{max-width:34em;margin-top:12px;color:var(--ink2);font-family:var(--serif);font-size:var(--st);line-height:1.45}
+@media(min-width:1100px){.g>.rail{grid-column:1/4}.g>.body{grid-column:4/13}.sh>.shb{grid-column:1/10}}
+.lgh{margin:28px 0 10px;font-size:1.375rem;line-height:1.3}
+.lg li{display:grid;grid-template-columns:7.5rem minmax(0,1fr);column-gap:12px;align-items:baseline;padding:12px 0 14px;border-top:1px solid var(--rule)}
+.lg .n{grid-row:1/3;font-size:1.625rem;line-height:1.1;white-space:nowrap}
+.lg .w,.lg .o{grid-column:2}
+.lg .w{line-height:1.45}
+.lg .o{color:var(--ink2);font-size:.9375rem;line-height:1.45}
+@media(min-width:760px){.lg li{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--cg)}.lg .n{grid-row:auto;grid-column:1/4;font-size:clamp(1.875rem,1.4rem + 1.4vw,2.625rem)}.lg .w{grid-column:4/9}.lg .o{grid-column:9/13}}
+@media(min-width:1100px){.lg .w{grid-column:4/10}.lg .o{grid-column:10/13}.lgh{margin-left:calc(25% + var(--cg)/4)}}
+.case{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--cg);padding:clamp(28px,4vw,44px) 0 clamp(36px,5vw,56px);border-top:1px solid var(--rule)}
+.case>*{grid-column:1/-1;min-width:0}
+.meta{color:var(--ink2);line-height:1.45;margin-bottom:6px}
+.meta span+span::before{content:", "}
+.hd h3{font-size:var(--h3);line-height:1.15}
+.stand{max-width:34em;margin-top:12px;font-family:var(--serif);font-size:var(--st);line-height:1.45}
+.rest p{max-width:36em;margin-top:16px}
+.ri{font-weight:600}
+.say{padding-left:18px;border-left:2px solid var(--acc);font:italic 400 1.25rem/1.45 var(--serif)}
+.rest .say{margin-top:24px}
+.more summary{display:inline-flex;align-items:center;gap:12px;min-height:44px;margin-top:12px;color:var(--acc);font-weight:600;cursor:pointer;list-style:none}
+.more summary::-webkit-details-marker{display:none}
+.more summary::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg)}
+.more[open] summary::after{transform:translateY(2px) rotate(225deg)}
+.more summary:hover{text-decoration:underline}
+.side{margin-top:22px}
+.fh{margin-bottom:8px;color:var(--ink2);font-size:.875rem;font-weight:600}
+.fx{display:grid;grid-template-columns:1fr 1fr;column-gap:var(--cg)}
+.fx li{padding:10px 0 12px;border-top:1px solid var(--rule);color:var(--ink2);font-size:.9375rem;line-height:1.45}
+.fx .n{display:block;font-size:clamp(1.75rem,1.4rem + 1vw,2.25rem);line-height:1.1}
+.go{margin-top:24px;padding:14px 0;border-top:1px solid var(--ink);font-weight:600}
+.go a{color:var(--acc)}
+@media(min-width:760px){.fx{display:block}}
+@media(min-width:760px){.case{grid-template-rows:auto auto 1fr}.case>.hd{grid-column:1/9;grid-row:2}.case>.side{grid-column:9/13;grid-row:2/4;margin-top:6px}.case>.rest{grid-column:1/9;grid-row:3}}
+@media(min-width:1100px){.case{grid-template-rows:auto 1fr}.case>.meta{grid-column:1/4;grid-row:1/3;padding-top:8px}.meta span{display:block}.meta span+span::before{content:none}.case>.hd{grid-column:4/10;grid-row:1}.case>.side{grid-column:10/13;grid-row:1/3}.case>.rest{grid-column:4/10;grid-row:2}}
+.fig{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--cg)}
+.fig>*{grid-column:1/-1;min-width:0}
+.plate{padding:clamp(22px,3vw,40px) clamp(16px,3.4vw,48px) clamp(26px,3vw,44px);background:var(--paper2)}
+@media(max-width:599px){.fig>.plate{margin-inline:calc(-1 * var(--gut))}}
+@media(min-width:1100px){.fig>.plate{margin-inline:calc((100% - min(100vw - 48px,84rem)) / 2)}}
+.rin{max-width:40em;margin-top:10px;font-size:1rem}
+.rg{display:grid;gap:36px}
+@media(min-width:960px){.rg{grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:48px}}
+.ch{display:block;font:400 1.5rem/1.2 var(--serif)}
+.lbl{display:block;font-weight:600}
+textarea{display:block;width:100%;min-height:6.5em;margin-top:10px;padding:12px 14px;border:1px solid var(--line);border-radius:2px;background:var(--paper);color:var(--ink);font:400 1rem/1.5 var(--sans);resize:vertical}
+.smp{margin-top:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.chips button{min-height:44px;padding:0 12px;border:1px solid var(--line);border-radius:2px;background:var(--paper);color:var(--ink);font:500 .9375rem/1.2 var(--sans);cursor:pointer}
+.chips button:hover{border-color:var(--ink)}
+.chips button[aria-current=true]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.try{margin-top:12px}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.acts .btn{min-height:44px;padding:0 16px;font-size:.9375rem}
+.guard{margin-top:18px;padding:12px 0 16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sw{display:inline-flex;align-items:center;gap:14px;min-height:48px;padding:0;border:0;background:none;color:var(--ink);cursor:pointer}
+.swl{font:400 1.5rem/1.2 var(--serif)}
+.track{position:relative;flex:none;width:56px;height:32px;border:2px solid var(--line);border-radius:16px;background:var(--paper)}
+.thumb{position:absolute;top:4px;left:4px;width:20px;height:20px;border-radius:50%;background:var(--ink2);transition:transform .15s ease}
+.sw[aria-checked=true] .track{border-color:var(--acc);background:var(--acc)}
+.sw[aria-checked=true] .thumb{background:var(--on);transform:translateX(24px)}
+.gs{min-width:2.4em;font:600 1.0625rem/1 var(--sans)}
+.guard .hint{margin-top:4px}
+.gmini{display:flex;align-items:center;gap:8px;margin-top:10px;font-weight:600}
+.gmini svg.i{width:22px;height:22px;color:var(--acc)}
+.gmini.fail svg.i{color:var(--ink)}
+.steps{margin-top:6px;counter-reset:s}
+.steps>li{display:grid;grid-template-columns:2.25rem minmax(0,1fr);column-gap:10px;padding:14px 0 16px;border-top:1px solid var(--line)}
+.steps>li>*{grid-column:2}
+.sn{grid-column:1/-1!important;display:flex;align-items:center;gap:10px;font-weight:600}
+.sx{display:inline-grid;place-items:center;width:2.25rem;height:2.25rem;border:1px solid var(--ink);border-radius:50%;font:400 1.125rem/1 var(--serif)}
+.res>div,.gate>div,.ex>div{display:grid;gap:2px 16px;padding:8px 0}
+.res dt{color:var(--ink2);font-size:.9375rem}
+.res dd{min-width:0;overflow-wrap:anywhere}
+@media(min-width:600px){.res>div{grid-template-columns:9.5rem minmax(0,1fr)}}
+.cv{font:400 1.375rem/1.2 var(--serif);font-variant-numeric:lining-nums}
+.mt{position:relative;display:block;max-width:280px;height:8px;margin:12px 0 26px;background:var(--rule);border-radius:4px}
+.mt i{position:absolute;left:0;top:0;bottom:0;border-radius:4px;background:var(--ink)}
+.mt b{position:absolute;left:60%;top:-5px;bottom:-5px;width:2px;background:var(--acc)}
+.mt em{position:absolute;left:60%;top:13px;transform:translateX(-50%);color:var(--ink2);font:normal 600 .75rem/1 var(--sans);white-space:nowrap}
+.cn{display:block;margin-top:2px}
+.fv{display:inline-block;margin:0 14px 2px 0}
+.fk{color:var(--ink2)}
+.lad{margin-top:8px;counter-reset:r}
+.lad li{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;padding:7px 0 7px 12px;border-left:2px solid var(--rule);color:var(--ink2)}
+.lad li.on{border-left-color:var(--acc);color:var(--ink);background:var(--paper)}
+.lad code{flex:1 1 14rem;font-size:.8125rem}
+.lad li.on code{font-weight:700}
+.tg{padding:0 6px;border:1px solid var(--line);border-radius:2px;font-size:.75rem;font-weight:600;white-space:nowrap}
+.tg:empty{display:none}
+.on .tg{border-color:var(--acc);background:var(--acc);color:var(--on)}
+.dec dd{display:flex;align-items:center;gap:10px;font:400 1.75rem/1.15 var(--serif)}
+.dec svg.i{width:28px;height:28px}
+code{font:400 .875em/1.5 var(--mono);overflow-wrap:anywhere}
+.draft{font:400 1.0625rem/1.5 var(--serif)}
+.note{margin-top:8px;padding:10px 14px;border-left:2px solid var(--ink);background:var(--paper);font-size:.9375rem}
+.note.flip{border-left-color:var(--acc);font-family:var(--serif);font-size:1.0625rem}
+.gw{display:grid;gap:20px 32px;margin-top:36px;padding-top:20px;border-top:2px solid var(--ink)}
+@media(min-width:960px){.gw{grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:48px}}
+.gate>div{grid-template-columns:minmax(0,1fr) auto;align-items:baseline;border-top:1px solid var(--line)}
+.gate dt{font-weight:600}
+.tag{margin-right:4px;padding:0 6px;border:1px solid var(--acc);border-radius:2px;color:var(--acc);font-size:.8125rem;font-weight:600;white-space:nowrap}
+.gate .v{font:400 1.5rem/1.2 var(--serif);font-variant-numeric:lining-nums tabular-nums;text-align:right;white-space:nowrap}
+.gate .v small{margin-left:10px;color:var(--ink2);font-size:1rem}
+.gate .h{grid-column:1/-1;color:var(--ink2);font-size:.9375rem}
+.pip{grid-column:1/-1;display:block;height:8px;margin:4px 0 2px;background:linear-gradient(90deg,var(--ink) var(--p,0%),var(--rule) 0);-webkit-mask:linear-gradient(90deg,#000 calc(100% - 3px),transparent 0) 0 0/calc(100% / var(--n,10)) 100%;mask:linear-gradient(90deg,#000 calc(100% - 3px),transparent 0) 0 0/calc(100% / var(--n,10)) 100%}
+.verdict{display:flex;align-items:flex-start;gap:12px;margin-top:14px;padding:14px 16px;border:2px solid var(--acc)}
+.verdict svg.i{width:28px;height:28px;color:var(--acc)}
+.verdict b{margin-right:4px;font:600 1.25rem/1.3 var(--serif);letter-spacing:.02em}
+.verdict.fail{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.verdict.fail svg.i{color:var(--paper)}
+.miss{display:block;margin-top:6px;font-family:var(--serif);font-style:italic}
+.gn{margin-top:12px}
+.ex{margin-top:16px}
+.ex>div{border-top:1px solid var(--line)}
+@media(min-width:760px){.ex>div{grid-template-columns:12rem minmax(0,1fr)}}
+.ex dt{font-weight:600}
+.gt{width:100%;margin-top:22px;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.gt caption{padding-bottom:8px;font-weight:600;text-align:left}
+.gt th,.gt td{padding:10px 12px 10px 0;border-top:1px solid var(--line);text-align:left;vertical-align:top}
+.gt thead th{color:var(--ink2);font-size:.9375rem}
+.fig figcaption{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--cg);margin-top:16px}
+.fig figcaption>*{grid-column:1/-1}
+.fl{color:var(--ink2)}
+.ft{margin-top:4px;max-width:44em;color:var(--ink2);font-size:.9375rem;line-height:1.55}
+@media(min-width:1100px){.fig .fl{grid-column:1/4;grid-row:1}.fig .ft{grid-column:4/11;margin-top:2px}.fig .ft+.ft{margin-top:8px}}
+.xp{display:grid;gap:24px var(--cg);margin-top:clamp(36px,5vw,56px)}
+.xp>div{padding-top:14px;border-top:1px solid var(--ink)}
+.xp h3{font-size:1.375rem;line-height:1.25}
+.xp p{margin-top:8px;font-size:1rem;line-height:1.55}
+@media(min-width:900px){.xp{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.pq{margin-top:clamp(40px,5vw,64px);padding-top:24px;border-top:1px solid var(--ink)}
+.pq>p:first-child{max-width:26em;font:italic 400 clamp(1.5rem,1.1rem + 1.6vw,2.25rem)/1.25 var(--serif);text-indent:-.42em}
+.src{margin-top:12px;color:var(--ink2);font-size:.9375rem}
+.note2{margin-bottom:20px;color:var(--ink2);font-size:.9375rem;line-height:1.55}
+.note2 p+p{margin-top:10px}
+@media(min-width:1100px){.note2{padding-top:22px;padding-right:12px;margin-bottom:0}}
+.pj{display:grid;column-gap:var(--cg)}
+@media(min-width:760px){.pj{grid-template-columns:1fr 1fr}}
+.pj li{padding:20px 0 14px;border-top:1px solid var(--rule)}
+.pj h3{font-size:1.5rem;line-height:1.2}
+.pj .sc{display:block;margin-top:2px;color:var(--acc)}
+.bd{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.bd span{padding:1px 7px;border:1px solid var(--line);border-radius:2px;font:400 .8125rem/1.5 var(--mono)}
+.pj li>p{margin-top:8px}
+.pj .proof{margin-top:12px;color:var(--ink2);font:400 .875rem/1.6 var(--mono)}
+.pj .tl{padding:0;margin-top:4px}
+.es li{display:grid;gap:4px 32px;padding:22px 0 26px;border-top:1px solid var(--rule)}
+@media(min-width:760px){.es li{grid-template-columns:minmax(0,5fr) minmax(0,6fr)}.es li>p:last-child{grid-column:2;grid-row:1/3}}
+.es h3{font-size:var(--h3);line-height:1.15}
+.es h3 a{display:inline-block;padding:10px 0;text-decoration:none}
+.es h3 a:hover{text-decoration:underline}
+.es .em{color:var(--ink2);font-size:.9375rem}
+.rules li{display:grid;gap:4px 32px;padding:18px 0 20px;border-top:1px solid var(--rule)}
+@media(min-width:760px){.rules li{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}}
+.rules b{font:400 1.375rem/1.3 var(--serif)}
+.wk .pq{margin:0 0 clamp(28px,4vw,44px);padding-top:0;border-top:0}
+.tlx{position:relative;height:136px;margin:0 0 28px}
+.tlx .b{position:absolute;bottom:28px;display:flex;align-items:center;height:44px;padding:0 10px;border:1px solid var(--line);background:var(--paper2);font:600 .8125rem/1.15 var(--sans);overflow:hidden}
+.tlx .y3{bottom:86px;border-color:var(--acc);background:var(--acc);color:var(--on)}
+.tlx .up{position:absolute;left:77.78%;bottom:72px;height:14px;border-left:2px solid var(--acc)}
+.tlx .pm{position:absolute;right:calc(22.22% + 8px);bottom:80px;color:var(--acc);font:italic 400 1.0625rem/1 var(--serif)}
+.ax{position:absolute;left:0;right:0;bottom:0;height:22px;border-top:1px solid var(--rule)}
+.ax span{position:absolute;top:5px;color:var(--ink2);font-size:.8125rem;transform:translateX(-50%)}
+.ax span:first-child{transform:none}
+.ax span:last-child{right:0;left:auto!important;transform:none}
+@media(max-width:599px){.ax .o{display:none}.tlx .b{padding:0 6px;font-size:.75rem}.tlx .y3{height:48px}}
+.pt li,.cvx>div{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--cg);padding:18px 0 22px;border-top:1px solid var(--rule)}
+.pt li>*,.cvx>div>*{grid-column:1/-1;min-width:0}
+.when{color:var(--ink2);font-variant-numeric:lining-nums}
+.pt h3{margin-top:2px;font-size:1.5rem;line-height:1.25}
+.pt p+div p{margin-top:6px;max-width:38em}
+.cvx dt{color:var(--ink2)}
+.cvx dd{max-width:38em}
+@media(min-width:1100px){.pt .when,.cvx dt{grid-column:1/4;padding-top:4px}.pt .what,.cvx dd{grid-column:4/13}}
+.close{margin-top:clamp(64px,9vw,128px);padding:clamp(48px,7vw,96px) 0;background:var(--paper2)}
+.close h2{max-width:11em;font-size:var(--h1);line-height:1.04;letter-spacing:-.015em}
+.lede{max-width:30em;margin-top:18px;font-family:var(--serif);font-size:var(--st);line-height:1.45}
+.big{display:block;margin-top:28px;font:400 clamp(1.375rem,1rem + 1.6vw,2.25rem)/1.2 var(--serif);overflow-wrap:anywhere}
+.close .cta{margin-top:18px}
+.cs{min-height:1.5em;margin-top:8px}
+.cr{margin-top:28px;border-top:1px solid var(--line)}
+.cr li{border-bottom:1px solid var(--line)}
+.cr a{display:flex;align-items:center;min-height:52px;font-weight:600;text-decoration:none}
+.cr a:hover{text-decoration:underline}
+.cr li:last-child{padding:14px 0;color:var(--ink2)}
+@media(min-width:900px){.close .g>.cl{grid-column:1/8}.close .g>.cr{grid-column:9/13;margin-top:0;align-self:end}}
+.ftr .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 24px;padding-top:20px;padding-bottom:32px;color:var(--ink2);font-size:.9375rem}
+.ftr .tl{padding:0;font-weight:500}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
 </style>
 </head>
-<body>
-
-<nav class="nav">
-  <div class="nav-inner">
-    <a class="brand" href="#top"><span class="mono">AK</span> Aman Kishore</a>
-    <div class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#projects">Projects</a>
-      <a href="#writing">Writing</a>
-      <a href="#path">Path</a>
-      <a class="nav-cta" href="#contact">Get in touch</a>
-    </div>
-  </div>
-</nav>
-
-<div class="wrap" id="top">
-
-  <header>
-    <div class="pill"><span class="dot"></span> Open to select Head of Product and AI product roles</div>
-    <h1>Product leadership for the AI-native era of logistics.</h1>
-    <p class="lede"><strong>Head of Product at TruKKer</strong>, the Middle East's largest digital freight network. I build marketplaces, agentic AI that runs in production, and the fintech rails underneath, across EMEA and CIS.</p>
-    <div class="links">
-      <a href="https://www.linkedin.com/in/i-am-amankishore" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/i-am-amankishore" target="_blank" rel="noopener">GitHub</a>
-      <a href="mailto:jayaswal.amk@gmail.com">Email</a>
-    </div>
-  </header>
-
-  <div class="band-eyebrow">Impact at TruKKer</div>
-  <div class="numbers">
-    <div class="num"><b>85%</b><span>of inbound inquiries automated by AI agents</span></div>
-    <div class="num"><b>145 &rarr; 95</b><span>days sales outstanding, cut by the FinOps program</span></div>
-    <div class="num"><b>8,600+</b><span>AI-assisted customer, supplier, and driver onboardings</span></div>
-    <div class="num"><b>22%</b><span>lower blended customer acquisition cost</span></div>
-    <div class="num"><b>30%</b><span>faster supplier sourcing</span></div>
-    <div class="num"><b>28%</b><span>fewer operational escalations</span></div>
-  </div>
-
-  <section id="work">
-    <h2>Selected work</h2>
-    <p class="sec-lead">Products and platforms I own or have shipped, described at the level I would take into a hiring conversation.</p>
-    <div class="work">
-      <div class="work-item">
-        <div class="w-cat">Agentic AI<br>EVA, Fatima, Sara</div>
-        <div>
-          <h3>Enterprise agentic AI program</h3>
-          <p>Defined the enterprise agentic AI strategy and architected the workflows behind EVA, Fatima, and Sara, our named agents running demand capture, supplier sourcing, driver coordination, customer support, collections, and promise to pay. Built with LLM orchestration and AI-assisted development. Not pilots: they carry real volume every day, and 85% of inbound inquiries resolve without a human touching them.</p>
-        </div>
-      </div>
-      <div class="work-item">
-        <div class="w-cat">Marketplace</div>
-        <div>
-          <h3>TruKKer Partner App</h3>
-          <p>A supplier and driver marketplace covering digital procurement, bidding, document automation, payments, and multi-currency ledgers across international markets. Grew on organic adoption, which is the only kind that means anything on the supply side.</p>
-        </div>
-      </div>
-      <div class="work-item">
-        <div class="w-cat">AI procurement<br>0 to 1</div>
-        <div>
-          <h3>Procure Co</h3>
-          <p>Conceived and built an AI-powered procurement platform that combines supplier intelligence, historical demand, and workflow automation to raise sourcing efficiency, procurement velocity, and cost discipline. Procurement is unglamorous, which is exactly why AI pays for itself there.</p>
-        </div>
-      </div>
-      <div class="work-item">
-        <div class="w-cat">Consumer<br>0 to 1</div>
-        <div>
-          <h3>Logisty, with Dubai's RTA</h3>
-          <p>A consumer home and goods moving platform in the UAE, built in partnership with the Roads and Transport Authority. A dual-sided referral program and partnerships with IKEA, Noon, Jumbo, and Justlife cut blended CAC by 22% while value-added services lifted average order value 9%.</p>
-        </div>
-      </div>
-      <div class="work-item">
-        <div class="w-cat">Fintech</div>
-        <div>
-          <h3>FinOps and payment rails</h3>
-          <p>Milestone-based carrier settlements, digital wallets, multi-currency payments, and regulatory e-invoicing across Saudi Arabia (ZATCA), Turkey (Uyumsoft), and Kazakhstan (1C). The receivables work brought DSO from 145 days down to 95.</p>
-        </div>
-      </div>
-      <div class="work-item">
-        <div class="w-cat">Platform<br>ERP and TMS</div>
-        <div>
-          <h3>Tech 2.0 platform</h3>
-          <p>Led the transformation to a unified logistics, ERP, and fintech platform: digital onboarding with automated document validation, inquiry to order management, multi-modal transport for FTL, LTL, and freight forwarding, and the invoicing and collections stack.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2>Things I build to think</h2>
-    <p class="sec-lead">Small working tools I wrote from scratch to pressure-test ideas. Every one runs offline on mock data and ships with its own tests. Nothing here is company code.</p>
-    <div class="projects">
-      <a class="proj" href="https://github.com/i-am-amankishore/inquiry-triage-agent" target="_blank" rel="noopener">
-        <span class="chip">Agentic AI</span>
-        <b>Inbound inquiry triage</b>
-        <span class="desc">Classifies inbound freight messages, extracts what ops needs, and decides when a machine may answer and when a human must. Anger and money always get a human.</span>
-        <span class="proj-foot"><span class="proof">eval gate: escalation recall 1.00</span><span class="go">View code &rarr;</span></span>
-      </a>
-      <a class="proj" href="https://github.com/i-am-amankishore/prd-copilot" target="_blank" rel="noopener">
-        <span class="chip">Product craft</span>
-        <b>PRD copilot</b>
-        <span class="desc">Drafts a PRD from a messy problem statement, lints existing PRDs against a quality bar, and ranks backlogs with RICE and WSJF. My real template is inside.</span>
-        <span class="proj-foot"><span class="proof">sample PRD scores 100/100</span><span class="go">View code &rarr;</span></span>
-      </a>
-      <a class="proj" href="https://github.com/i-am-amankishore/freight-rate-simulator" target="_blank" rel="noopener">
-        <span class="chip">Pricing</span>
-        <b>Freight rate simulator</b>
-        <span class="desc">An explainable lane pricing engine. Every quote is a set of line items a human can argue with, plus a simulator that finds the profit-maximizing price, not the win-rate one.</span>
-        <span class="proj-foot"><span class="proof">profit peaks at 1.22x, 33% win rate</span><span class="go">View code &rarr;</span></span>
-      </a>
-      <a class="proj" href="https://github.com/i-am-amankishore/settlement-engine" target="_blank" rel="noopener">
-        <span class="chip">Fintech</span>
-        <b>Settlement engine</b>
-        <span class="desc">Milestone-based carrier payouts on a double-entry multi-currency ledger, with receivables aging and a DSO report. Money never floats.</span>
-        <span class="proj-foot"><span class="proof">8 invariant tests, 4 currencies</span><span class="go">View code &rarr;</span></span>
-      </a>
-      <a class="proj" href="https://github.com/i-am-amankishore/discovery-interview-insights" target="_blank" rel="noopener">
-        <span class="chip">Research</span>
-        <b>Discovery interview insights</b>
-        <span class="desc">Turns a folder of user interviews into ranked themes, each carrying the verbatim quotes that earned it. A theme without a quote is an opinion.</span>
-        <span class="proj-foot"><span class="proof">quote precision 1.00, recall 0.90</span><span class="go">View code &rarr;</span></span>
-      </a>
-      <a class="proj" href="https://github.com/i-am-amankishore/carrier-onboarding-checker" target="_blank" rel="noopener">
-        <span class="chip">Trust and safety</span>
-        <b>Carrier onboarding checker</b>
-        <span class="desc">Completeness, expiry, and consistency checks on onboarding documents. Fails closed: nothing it cannot fully verify gets auto-approved.</span>
-        <span class="proj-foot"><span class="proof">9 decision invariants under test</span><span class="go">View code &rarr;</span></span>
-      </a>
-    </div>
-    <p class="proj-note">Add an Anthropic key and the AI parts switch from deterministic rules to a live model. That split is deliberate: a workflow should survive the model being wrong.</p>
-  </section>
-
-  <section id="writing">
-    <h2>Writing</h2>
-    <p class="sec-lead">Where I work an argument out in full.</p>
-    <div class="projects">
-      <a class="proj" href="essays/why-agents-need-evals.html">
-        <span class="chip">Essay</span>
-        <b>Why agents need evals</b>
-        <span class="desc">Most agent demos show you the run that worked. The eval, not the model, is what makes an agent safe to ship. On the one number that decides whether a release goes out.</span>
-        <span class="proj-foot"><span class="proof">4 minute read</span><span class="go">Read &rarr;</span></span>
-      </a>
-    </div>
-  </section>
-
-  <section id="principles">
-    <h2>How I work</h2>
-    <p class="sec-lead">Four rules I keep coming back to.</p>
-    <div class="principles">
-      <p><b>Ship the boring version first.</b> The elegant version teaches you nothing until real users have broken the simple one.</p>
-      <p><b>Evals before scale.</b> Nothing an LLM touches meets a customer without a measured baseline and an escalation path for when the model is wrong.</p>
-      <p><b>Money logic must be explainable.</b> If pricing or settlements cannot be walked through with a CFO on one screen, they are not done.</p>
-      <p><b>Process is a product too.</b> If it takes forty slides to explain, the process is the problem, not the audience.</p>
-    </div>
-  </section>
-
-  <section id="path">
-    <h2>Path</h2>
-    <div class="timeline">
-      <div class="trow">
-        <div class="when">2025 to now</div>
-        <div><b>TruKKer</b> &middot; Head of Product<span>Reporting to the CEO. Product, Design, and BI across AI, marketplaces, fintech, and ERP for EMEA and CIS.</span></div>
-      </div>
-      <div class="trow">
-        <div class="when">2021 to 2024</div>
-        <div><b>TruKKer</b> &middot; Senior Product Manager<span>Led the Tech 2.0 platform transformation: onboarding, orders, cash flow, invoicing, and collections.</span></div>
-      </div>
-      <div class="trow">
-        <div class="when">2018 to 2021</div>
-        <div><b>Yulu</b> &middot; Manager, Process Optimization and Transformation<span>Early hire reporting to founders. Launched Bangalore, scaled to 12,000+ assets and a 350-person team, grew long-term rentals from 5% to 45% of the business.</span></div>
-      </div>
-    </div>
-  </section>
-
-  <footer id="contact">
-    <div class="contact-card">
-      <h2>Get in touch</h2>
-      <p>Open to conversations about AI-native product organizations, logistics and fintech platforms, and roles where product owns outcomes, not tickets.</p>
-      <div class="contact-actions">
-        <a class="btn" href="mailto:jayaswal.amk@gmail.com">Email me</a>
-        <a href="https://www.linkedin.com/in/i-am-amankishore" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/i-am-amankishore" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </div>
-    <p class="foot-note">Aman Kishore. Built by hand, no framework, loads in under a second.</p>
-  </footer>
-
+<body id="top">
+<header class="hdr">
+<a class="skip" href="#main">Skip to main content</a>
+<div class="wrap bar">
+<a class="brand" href="#top"><span class="mono" aria-hidden="true">AK</span>Aman Kishore</a>
+<nav class="nav" aria-label="Sections"><a href="#work">Work</a><a href="#router">Router</a><a href="#projects">Projects</a><a href="#writing">Writing</a><a href="#path">Path</a><a href="#contact">Contact</a></nav>
+<button class="ib theme nav-t" type="button" hidden aria-label="Switch to dark theme"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg></button>
+<a class="btn btn-p" href="mailto:jayaswal.amk@gmail.com">Email me</a>
+<details class="menu">
+<summary><span class="mo">Menu</span><span class="mc">Close<span class="vh"> menu</span></span></summary>
+<div class="panel">
+<nav aria-label="Sections menu"><a href="#work">Work</a><a href="#router">Router</a><a href="#projects">Projects</a><a href="#writing">Writing</a><a href="#path">Path</a><a href="#contact">Contact</a></nav>
+<button class="theme" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg><span class="tt">Switch to dark theme</span></button>
 </div>
+</details>
+</div>
+</header>
+<main id="main">
+<section class="hero">
+<div class="wrap g">
+<div class="ht">
+<p class="who">Aman Kishore<i aria-hidden="true">·</i><span class="vh">, </span>Head of Product, TruKKer</p>
+<p class="avail">Open to select Head of Product and AI product roles</p>
+<h1>I build freight AI that knows when to call a human.</h1>
+<p class="dek">At TruKKer, the Middle East’s largest digital freight network, I lead Product, Design and BI and report to the CEO and CTO. I own product vision, roadmap and delivery across AI automation, fintech, B2C supply platforms and ERP enhancements, in EMEA and CIS.</p>
+<div class="cta">
+<a class="btn btn-p" href="mailto:jayaswal.amk@gmail.com">Email me</a>
+<a class="btn" href="Aman-Kishore-CV.pdf" type="application/pdf">Download CV (PDF)</a>
+<a class="tl" href="https://www.linkedin.com/in/i-am-amankishore" target="_blank" rel="noopener">LinkedIn<span class="vh"> (opens in a new tab)</span></a>
+<a class="tl" href="https://github.com/i-am-amankishore" target="_blank" rel="noopener">GitHub<span class="vh"> (opens in a new tab)</span></a>
+</div>
+<p class="hm"><span class="addr">jayaswal.amk@gmail.com</span><br>Based in Bangalore, India (IST). 8+ years in product and operations.</p>
+</div>
+<div class="hfw">
+<ul class="hf">
+<li><b class="n">85%</b> of customer inquiries automated by EVA at TruKKer</li>
+<li><b class="n">145<span class="to" aria-hidden="true">→</span><span class="vh"> to </span>95</b> days sales outstanding after the FinOps module at TruKKer</li>
+<li><b class="n">8,600+</b> AI-based onboardings at TruKKer: customers, suppliers, drivers, assets</li>
+<li><b class="n">22%</b> lower blended CAC at Logisty</li>
+</ul>
+<p class="hfc">TruKKer and its Logisty platform, 2021 to now.</p>
+</div>
+</div>
+</section>
 
+<section class="glance" aria-labelledby="ag">
+<div class="wrap"><div class="g">
+<div class="gla">
+<h2 id="ag">At a glance</h2>
+<dl class="gl">
+<div><dt>Role</dt><dd>Head of Product, TruKKer</dd></div>
+<div><dt>Since</dt><dd>Jan 2025, promoted from Senior Product Manager</dd></div>
+<div><dt>Leads</dt><dd>Product, Design and BI teams</dd></div>
+<div><dt>Reports to</dt><dd>CEO and CTO</dd></div>
+<div><dt>Owns</dt><dd>Product vision, AI transformation roadmap, platform architecture, multi-country execution</dd></div>
+<div><dt>Domains</dt><dd>AI automation, fintech, B2C supply platforms, ERP enhancements, in freight and logistics</dd></div>
+<div><dt>Regions</dt><dd>EMEA and CIS</dd></div>
+<div><dt>Based in</dt><dd>Bangalore, India (IST)</dd></div>
+<div><dt>Experience</dt><dd>8+ years, since Mar 2018</dd></div>
+</dl>
+</div>
+<div class="wr">
+<h3>Where the work runs</h3>
+<ul class="mk">
+<li><b>UAE</b><span>Logisty, with Dubai’s RTA. TruKKer Partner App.</span></li>
+<li><b>Saudi Arabia</b><span>Regulatory-compliant invoicing with ZATCA. TruKKer Partner App.</span></li>
+<li><b>Turkey</b><span>Regulatory-compliant invoicing with Uyumsoft. TruKKer Partner App.</span></li>
+<li><b>Kazakhstan</b><span>Regulatory-compliant invoicing with 1C.</span></li>
+</ul>
+<p class="hint mk2">Before TruKKer</p>
+<ul class="mk">
+<li><b>India</b><span>Yulu, Bangalore, 2018 to 2021.</span></li>
+</ul>
+</div>
+</div></div>
+</section>
+
+<section class="sec" id="record">
+<div class="wrap">
+<div class="sh g"><div class="shb"><h2>What moved</h2><p class="intro">Outcomes from my CV, each with the company and product it belongs to. Repo numbers come later, and you can rerun those yourself.</p></div></div>
+<h3 class="lgh">At TruKKer, 2021 to now</h3>
+<ul class="lg">
+<li><b class="n">85%</b><span class="w">Customer inquiries automated</span><span class="o"><span class="vh">: </span>EVA</span></li>
+<li><b class="n">30%</b><span class="w">Sourcing efficiency improvement</span><span class="o"><span class="vh">: </span>Fatima</span></li>
+<li><b class="n">25%</b><span class="w">Operational efficiency improvement</span><span class="o"><span class="vh">: </span>Fatima</span></li>
+<li><b class="n">28%</b><span class="w">Fewer escalation cases</span><span class="o"><span class="vh">: </span>AI operations assistant</span></li>
+<li><b class="n">8,600+</b><span class="w">AI-based onboardings across customers, suppliers, drivers and assets</span><span class="o"><span class="vh">: </span>AI-based onboarding</span></li>
+<li><b class="n">145<span class="to" aria-hidden="true">→</span><span class="vh"> to </span>95</b><span class="w">Days sales outstanding</span><span class="o"><span class="vh">: </span>FinOps module, as Senior Product Manager</span></li>
+</ul>
+<h3 class="lgh">At Logisty, operated by TruKKer</h3>
+<ul class="lg">
+<li><b class="n">22%</b><span class="w">Lower blended CAC, through referrals and brand-coupon partnerships</span><span class="o"><span class="vh">: </span>Logisty</span></li>
+<li><b class="n">9%</b><span class="w">Higher AOV, through value-added services and line-item pricing</span><span class="o"><span class="vh">: </span>Logisty</span></li>
+</ul>
+<h3 class="lgh">At Yulu, 2018 to 2021</h3>
+<ul class="lg">
+<li><b class="n">12,000+</b><span class="w">Cycles and e-bikes overseen</span><span class="o"><span class="vh">: </span>Yulu</span></li>
+<li><b class="n">350+</b><span class="w">People on the team</span><span class="o"><span class="vh">: </span>Yulu</span></li>
+<li><b class="n">5%<span class="to" aria-hidden="true">→</span><span class="vh"> to </span>45%</b><span class="w">Long-term rental’s share of Bangalore business</span><span class="o"><span class="vh">: </span>Yulu</span></li>
+</ul>
+</div>
+</section>
+
+<section class="sec" id="work">
+<div class="wrap">
+<div class="sh g"><div class="shb"><h2>Selected work</h2><p class="intro">The work I would walk you through on a first call. It starts with the AI program. The router after it is the part you can try.</p></div></div>
+
+<article class="case">
+<p class="meta sc"><span>TruKKer</span><span>Agentic AI</span></p>
+<div class="hd"><h3>EVA, Fatima and Sara</h3>
+<p class="stand">I designed and implemented an agentic AI framework across the freight lifecycle. Its named agents, EVA, Fatima and Sara, are not pilots. They carry real volume every day.</p></div>
+<div class="side"><p class="fh">What changed</p><ul class="fx">
+<li><b class="n">85%</b> of customer inquiries automated by EVA</li>
+<li><b class="n">30%</b> improvement in sourcing efficiency, from Fatima</li>
+<li><b class="n">25%</b> improvement in operational efficiency, from Fatima</li>
+<li><b class="n">28%</b> fewer escalation cases, from an AI operations assistant I built</li>
+<li><b class="n">8,600+</b> AI-based onboardings across customers, suppliers, drivers and assets</li>
+</ul></div>
+<div class="rest">
+<p><b class="ri">The problem.</b> Agent projects rarely fail on the model. They fail on a decision nobody owns: what the agent may do alone and what it must hand to a person.</p>
+<p><b class="ri">What I did.</b> The framework covers the lifecycle: demand capture, supply matching, pricing, onboarding and operations. I own the AI transformation roadmap. I also built an AI operations assistant and scaled AI-based onboarding across customers, suppliers, drivers and assets.</p>
+<p class="say">My rule: an agent gets an escalation path before it gets a launch date.</p>
+<p class="go">The rule is easy to state and easy to break. <a href="#router">Try the router</a>: switch off the money guardrail and watch the release gate fail.</p>
+</div>
+</article>
+</div>
+</section>
+
+<section class="sec" id="router">
+<div class="wrap">
+<div class="sh g"><div class="shb"><h2>Try the router</h2><p class="intro">Classification is a commodity. The routing policy and the eval gate are the product.</p><p class="rin" id="rin" hidden>This runs in your browser. Nothing you type leaves the page.</p></div></div>
+<figure class="fig" aria-label="Figure 1: the triage router and its eval gate">
+<div class="plate">
+<div class="r-live" hidden>
+<div class="rg">
+<div class="c1">
+<label class="ch" for="msg">Inbound message</label>
+<p class="hint" id="msgh">Anything a shipper or carrier might send. The result updates as you type.</p>
+<textarea id="msg" rows="3" maxlength="600" aria-describedby="msgh" spellcheck="false" autocomplete="off"></textarea>
+<div class="acts"><button type="button" class="btn" id="run">Route message</button><button type="button" class="btn" id="reset">Reset demo</button></div>
+<p class="hint try">Try this: load “Invoice looks wrong”, then turn the money guardrail off.</p>
+<div class="guard">
+<button type="button" class="sw" id="gsw" role="switch" aria-checked="true" aria-describedby="gh"><span class="swl">Money guardrail</span><span class="track" aria-hidden="true"><span class="thumb"></span></span><span class="gs" aria-hidden="true">On</span></button>
+<p class="hint" id="gh">Sends billing language to a human, even when the classifier calls the message routine.</p>
+<p class="gmini" id="gmini"></p>
+<div class="smp" role="group" aria-labelledby="smpl">
+<p class="lbl" id="smpl">Load a sample</p>
+<div class="chips"><button type="button" data-s="0">Invoice looks wrong</button><button type="button" data-s="1">Quote, Riyadh to Jeddah</button><button type="button" data-s="2">Where is my shipment</button><button type="button" data-s="3">POD attached</button><button type="button" data-s="4">Payment overdue</button><button type="button" data-s="5">Damaged pallets</button><button type="button" data-s="6">Payout missing</button><button type="button" data-s="7">Border delay</button><button type="button" data-s="8">Just “hello”</button></div>
+</div>
+</div>
+</div>
+<div class="c2">
+<h3 class="ch">What the router decided</h3>
+<ol class="steps">
+<li><p class="sn"><span class="sx" aria-hidden="true">1</span>Classify</p>
+<dl class="res"><div><dt>Intent</dt><dd id="oi"></dd></div>
+<div><dt>Confidence (margin)</dt><dd><span class="cv" id="oc"></span><span class="mt" aria-hidden="true"><i id="omt"></i><b></b><em>0.60 floor</em></span><span class="hint cn" id="ow"></span><span class="hint cn">A margin, not a probability: the top intent’s share of the top two scores. Below the 0.60 floor, a person reads it.</span></dd></div></dl></li>
+<li><p class="sn"><span class="sx" aria-hidden="true">2</span>Extract</p>
+<dl class="res"><div><dt>Fields found</dt><dd id="of"></dd></div></dl></li>
+<li><p class="sn"><span class="sx" aria-hidden="true">3</span>Policy</p>
+<p class="hint">Checked in this order. The first rule that matches decides.</p>
+<ol class="lad" id="rules">
+<li><code class="rt">policy: money and anger always get a human</code><b class="tg"></b></li>
+<li><code class="rt">policy: unclassified goes to a human</code><b class="tg"></b></li>
+<li><code class="rt">confidence below floor 0.6</code><b class="tg"></b></li>
+<li><code class="rt">guardrail: billing language present, a human confirms even when the intent looks routine</code><b class="tg"></b></li>
+<li><code class="rt">clear intent, safe to auto-handle</code><b class="tg"></b></li>
+</ol>
+<p class="hint cn" id="op"></p></li>
+<li><p class="sn"><span class="sx" aria-hidden="true">4</span>Decision</p>
+<dl class="res"><div class="dec"><dt>Decision</dt><dd id="od"></dd></div>
+<div><dt>Draft reply</dt><dd id="odr"></dd></div></dl>
+<p class="note" id="on" hidden></p></li>
+</ol>
+</div>
+</div>
+<div class="gw">
+<div>
+<h3 class="ch">Eval gate</h3>
+<p class="hint">26 labeled cases, recomputed every time you flip the switch. The gate is escalation recall: it must be 1.00, and anything less does not ship.</p>
+<div class="verdict" id="vd"></div>
+<p class="hint gn" id="gn" hidden></p>
+</div>
+<dl class="gate">
+<div><dt>Escalation recall</dt><dd class="v" id="m0"></dd><dd class="pip" id="p0" aria-hidden="true"></dd><dd class="h"><span class="tag">Release gate</span> Messages that had to reach a human and did.</dd></div>
+<div><dt>Auto-handle precision</dt><dd class="v" id="m1"></dd><dd class="pip" id="p1" aria-hidden="true"></dd><dd class="h">Auto-replies that had the right intent.</dd></div>
+<div><dt>Intent accuracy</dt><dd class="v" id="m2"></dd><dd class="pip" id="p2" aria-hidden="true"></dd><dd class="h">Right intent, whatever the route.</dd></div>
+</dl>
+</div>
+<p class="vh" id="ann" role="status" aria-live="polite"></p>
+</div>
+<div class="r-static">
+<h3 class="ch">Worked example</h3>
+<p class="rin">JavaScript is off, so here is one message, routed twice.</p>
+<dl class="ex">
+<div><dt>Message</dt><dd>“The shipment arrived but the invoice amount looks wrong, please check and update the status”</dd></div>
+<div><dt>Classifier</dt><dd>Shipment status, confidence 0.83. Top score 5 (shipment status), runner-up 1 (payment query). That is a margin, not a probability, and the intent is wrong: this is a payment query.</dd></div>
+<div><dt>Money guardrail on</dt><dd>Human. The rule that fired is <code>guardrail: billing language present, a human confirms even when the intent looks routine</code></dd></div>
+<div><dt>Money guardrail off</dt><dd>Auto-reply: “Thanks for checking in. I am pulling the live position of your shipment now and will send the current location and updated ETA in the next few minutes.” A polite answer to the wrong question.</dd></div>
+</dl>
+<table class="gt">
+<caption>Eval gate, 26 labeled cases</caption>
+<thead><tr><th scope="col">Metric</th><th scope="col">Guardrail on</th><th scope="col">Guardrail off</th></tr></thead>
+<tbody>
+<tr><th scope="row">Escalation recall, the release gate</th><td>10/10 = 1.00</td><td>9/10 = 0.90</td></tr>
+<tr><th scope="row">Auto-handle precision</th><td>13/13 = 1.00</td><td>13/14 = 0.93</td></tr>
+<tr><th scope="row">Intent accuracy</th><td>24/26 = 0.92</td><td>24/26 = 0.92</td></tr>
+<tr><th scope="row">Verdict</th><td>PASS</td><td>DO NOT SHIP</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<figcaption><p class="fl sc">Figure 1</p><p class="ft">The rules baseline from my public inquiry-triage-agent repo, ported to JavaScript with exact parity. No model, no API, no network calls. It is not TruKKer’s system: it runs on the repo’s mock data. The keyword cues were tuned on these same 26 cases, so a perfect gate here shows the policy holds; it says nothing about messages the cues have never seen. In the repo, a live model can replace the classifier while the routing policy stays as it is.</p><p class="ft"><a href="https://github.com/i-am-amankishore/inquiry-triage-agent" target="_blank" rel="noopener">Read the code: inquiry-triage-agent on GitHub<span class="vh"> (opens in a new tab)</span></a>. <a href="essays/why-agents-need-evals.html">Read the story: Why agents need evals</a>, a 4 minute read.</p></figcaption>
+</figure>
+<div class="xp">
+<div><h3>Confidence is a margin</h3><p>The top intent’s keyword score divided by the top two scores combined. The invoice dispute scores 5 for shipment status and 1 for the runner-up, so 5 / (5 + 1) = 0.83: one intent clearly won, and it is the wrong one. “Where is the quote?” ties shipment status and quote request at 3 / (3 + 3) = 0.50, below the floor, so a person reads it.</p></div>
+<div><h3>The failure the gate caught</h3><p>The switch reproduces the failure my first eval run caught: an invoice dispute classified as a status check and auto-answered. The fix was a rule: billing language goes to a human.</p></div>
+<div><h3>Why the gate is recall</h3><p>A needless escalation costs a person a minute. A missed one puts a machine’s answer in front of an angry customer or a payment dispute. So the gate counts the second kind, and intent accuracy is reported, not gated. Switch the guardrail off and accuracy stays at 24/26 while the product becomes unshippable.</p></div>
+</div>
+<blockquote class="pq"><p>“Overall accuracy is the number people quote. Escalation recall is the number that decides whether you ship.”</p><p class="src">From my essay <cite>Why agents need evals</cite></p></blockquote>
+</div>
+</section>
+
+<section class="sec" id="more">
+<div class="wrap">
+<div class="sh g"><div class="shb"><h2>More of the work</h2><p class="intro">Money, marketplaces, platforms, and the operations job that came first. Open each one for the problem and what I did.</p></div></div>
+
+<article class="case">
+<p class="meta sc"><span>TruKKer</span><span>Fintech</span><span>2021 to now</span></p>
+<div class="hd"><h3>FinOps and payables</h3>
+<p class="stand">The money side of a freight marketplace, from invoice to payout.</p></div>
+<div class="side"><p class="fh">What changed</p><ul class="fx">
+<li><b class="n">145<span class="to" aria-hidden="true">→</span><span class="vh"> to </span>95</b> days sales outstanding, after the FinOps module</li>
+<li>Milestone-based wallet and bank payouts, eliminating payment leakages</li>
+<li>Regulatory-compliant invoicing: ZATCA, Uyumsoft, 1C</li>
+</ul></div>
+<div class="rest">
+<details class="more" open><summary>The problem and what I did</summary>
+<p><b class="ri">The problem.</b> In freight, carriers want to be paid on delivery and customers pay on their own terms. The platform in the middle carries that gap, and every manual step in billing widens it.</p>
+<p><b class="ri">What I did.</b> As Senior Product Manager I delivered the FinOps module, with real-time financial dashboards and workflows. As Head of Product I transformed fintech and payables with regulatory-compliant invoicing (ZATCA, Uyumsoft, 1C) and milestone-based wallet and bank payouts, eliminating payment leakages. Underneath sit milestone-based vendor settlements and multi-currency payments.</p>
+</details>
+<p class="say">Cent leaks in payment systems are how you end up with a reconciliation team. Fix the rails before you hire the team.</p>
+</div>
+</article>
+
+<article class="case">
+<p class="meta sc"><span>TruKKer</span><span>Supply marketplace</span></p>
+<div class="hd"><h3>TruKKer Partner App</h3>
+<p class="stand">The supplier and driver app for the UAE, KSA and Turkey. It grew on organic adoption, which is the only kind that means anything on the supply side.</p></div>
+<div class="side"><p class="fh">What changed</p><ul class="fx">
+<li>Organic adoption: UAE 40%, KSA 25%, Turkey 30%</li>
+</ul></div>
+<div class="rest">
+<details class="more"><summary>The problem and what I did</summary>
+<p><b class="ri">The problem.</b> In a freight marketplace, trucks are the scarce side. Supply-side products also fail quietly. A supplier or driver who dislikes the app does not complain. They go back to the phone, and the marketplace never learns why.</p>
+<p><b class="ri">What I did.</b> I rebuilt the supplier and driver B2B marketplace with digital procurement, bidding, payments, document automation and multi-currency ledgers.</p>
+</details>
+<p class="say">Incentives rent supply. A tool that saves a supplier a phone call keeps it.</p>
+</div>
+</article>
+
+<article class="case">
+<p class="meta sc"><span>TruKKer</span><span>B2C</span><span>0 to 1</span></p>
+<div class="hd"><h3>Logisty, with Dubai’s RTA</h3>
+<p class="stand">I led the 0 to 1 launch of Logisty, a B2C home and goods moving platform in the UAE, operated by TruKKer, with Dubai’s Roads and Transport Authority (RTA).</p></div>
+<div class="side"><p class="fh">What changed</p><ul class="fx">
+<li><b class="n">22%</b> lower blended CAC</li>
+<li><b class="n">9%</b> higher AOV</li>
+</ul></div>
+<div class="rest">
+<details class="more"><summary>The problem and what I did</summary>
+<p><b class="ri">The problem.</b> A home move is a trust purchase. A new consumer brand pays for that trust in acquisition cost, unless someone lends it.</p>
+<p><b class="ri">What I did.</b> I reduced blended CAC by 22% with a dual-sided referral program and brand-coupon partnerships (IKEA, Noon, Jumbo, Justlife and others). I increased AOV by 9% with value-added services and dynamic line-item pricing, which enabled upsells across the booking flow.</p>
+</details>
+<p class="say">Borrow trust before you buy it. And itemize the price. People say yes to an extra they can see and no to a total they cannot explain.</p>
+</div>
+</article>
+
+<article class="case">
+<p class="meta sc"><span>TruKKer</span><span>AI procurement</span></p>
+<div class="hd"><h3>Procure Co</h3>
+<p class="stand">An AI-powered procurement platform that combines supplier intelligence, historical demand, and workflow automation to raise sourcing efficiency, procurement velocity, and cost discipline.</p></div>
+<div class="side"><p class="fh">My part</p><ul class="fx">
+<li>Company-wide strategic decisions on Procure Co, as Head of Product</li>
+<li>Alongside profitability optimization and supply-side engagement</li>
+</ul></div>
+<div class="rest">
+<details class="more"><summary>The problem and what I did</summary>
+<p><b class="ri">The problem.</b> Procurement runs on habit: the usual suppliers, last quarter’s rates, a spreadsheet.</p>
+<p><b class="ri">What I did.</b> As Head of Product I drove company-wide strategic decisions on profitability optimization, Procure Co and supply-side engagement.</p>
+</details>
+<p class="say">Procurement is unglamorous, which is exactly why AI pays for itself there.</p>
+</div>
+</article>
+
+<article class="case">
+<p class="meta sc"><span>TruKKer</span><span>Platform</span><span>2021 to 2024</span></p>
+<div class="hd"><h3>Tech 2.0 platform</h3>
+<p class="stand">I designed Tech 2.0: end-to-end digital workflows across all business verticals, unifying logistics, ERP and fintech.</p></div>
+<div class="side"><p class="fh">What shipped</p><ul class="fx">
+<li>Onboarding, inquiry to order, cash flow, invoicing and user access on one platform</li>
+<li>Profitability KPIs and operational analytics embedded across teams</li>
+</ul></div>
+<div class="rest">
+<details class="more"><summary>The problem and what I did</summary>
+<p><b class="ri">The problem.</b> A freight business that grows country by country collects workarounds. Automate a workaround and you get the same mess, faster.</p>
+<p><b class="ri">What I did.</b> As Senior Product Manager I led a multi-regional platform transformation. Tech 2.0 covers five workflows: onboarding, inquiry to order, cross-border cash, invoicing and collections, and user access. Onboarding alone handles document validation, SLA tracking and contracts for customers, suppliers, drivers and assets. I pushed for data-first decisions across teams.</p>
+</details>
+<p class="say">Digitize the workflow before you automate it. An agent cannot fix a process that only exists in someone’s inbox.</p>
+</div>
+</article>
+
+<article class="case">
+<p class="meta sc"><span>Yulu</span><span>Operations</span><span>2018 to 2021</span></p>
+<div class="hd"><h3>Yulu: launching Bangalore</h3>
+<p class="stand">Early hire reporting to the founders. I led the launch of Bangalore operations.</p></div>
+<div class="side"><p class="fh">What changed</p><ul class="fx">
+<li><b class="n">5%<span class="to" aria-hidden="true">→</span><span class="vh"> to </span>45%</b> long-term rental’s share of Bangalore business</li>
+<li><b class="n">12,000+</b> cycles and e-bikes overseen</li>
+<li><b class="n">350+</b> people on the team</li>
+<li>Automated the relocation process by 95% with an in-house app and training</li>
+<li>Increased profitability with the CM-60 project, which improved contribution margin through operational efficiency</li>
+</ul></div>
+<div class="rest">
+<details class="more"><summary>The problem and what I did</summary>
+<p><b class="ri">The problem.</b> Shared bikes are a logistics business with a consumer app on top. The margin lives in relocation, repair and how often each bike earns. Then the Covid lockdowns arrived.</p>
+<p><b class="ri">What I did.</b> I set up the repair, maintenance and relocation functions. During the lockdowns I worked on the long-term rental business, from concept to implementation; its share of Bangalore business grew from 5% to 45%.</p>
+</details>
+<p class="say">A crisis rarely kills demand. It changes its shape. Long-term rental was the same bike, sold a different way.</p>
+</div>
+</article>
+</div>
+</section>
+
+<section class="sec" id="projects">
+<div class="wrap">
+<div class="sh g"><div class="shb"><h2>Things I build to think</h2><p class="intro">Small working tools I wrote from scratch to pressure-test ideas. None of this is company code. All of it reflects how I think.</p></div></div>
+<div class="g">
+<div class="rail note2"><p>Six repos on mock data. Each has CI, and four ship evals or invariant tests. All six run offline with zero API keys.</p><p>Three of the repos have an AI path: add an Anthropic key and run with --live, and classification moves from deterministic rules to a live model. The split is deliberate: a workflow should survive the model being wrong.</p></div>
+<ul class="pj body">
+<li><h3>Inquiry triage agent</h3><span class="sc">Agentic AI</span><p class="bd"><span>CI</span><span>evals</span><span>--live</span></p><p>Classifies inbound freight messages, extracts what ops needs, and decides when a machine may answer. Anger and money always get a human. The router is the product.</p><p class="proof">Eval gate on 26 labeled cases: escalation recall 10/10, auto-handle precision 13/13, intent accuracy 24/26.</p><a class="tl" href="https://github.com/i-am-amankishore/inquiry-triage-agent" target="_blank" rel="noopener">Code on GitHub<span class="vh">: inquiry-triage-agent (opens in a new tab)</span></a></li>
+<li><h3>PRD copilot</h3><span class="sc">Product craft</span><p class="bd"><span>CI</span><span>--live</span></p><p>My PRD review bar, encoded as a linter, plus RICE and WSJF backlog scoring. The linter measures presence. The reviewer measures truth.</p><p class="proof">Sample PRD scores 100/100. RICE ranks BL-08 first (810.0), WSJF ranks BL-10 first (52.5).</p><a class="tl" href="https://github.com/i-am-amankishore/prd-copilot" target="_blank" rel="noopener">Code on GitHub<span class="vh">: prd-copilot (opens in a new tab)</span></a></li>
+<li><h3>Freight rate simulator</h3><span class="sc">Pricing</span><p class="bd"><span>CI</span></p><p>Every quote is a sum of line items a human can argue with. The simulator finds where profit peaks, and how flat the top is.</p><p class="proof">500 simulated shipments: expected profit peaks at 1.22x cost, a 33% win rate.</p><a class="tl" href="https://github.com/i-am-amankishore/freight-rate-simulator" target="_blank" rel="noopener">Code on GitHub<span class="vh">: freight-rate-simulator (opens in a new tab)</span></a></li>
+<li><h3>Settlement engine</h3><span class="sc">Fintech</span><p class="bd"><span>CI</span><span>tests</span></p><p>Milestone-based carrier payouts on a double-entry, multi-currency ledger, with receivables aging and DSO. Balances are derived from entries, never stored. Money never floats.</p><p class="proof">8 invariant tests. Demo book: 65 ledger entries in 4 currencies, trial balance balanced per currency.</p><a class="tl" href="https://github.com/i-am-amankishore/settlement-engine" target="_blank" rel="noopener">Code on GitHub<span class="vh">: settlement-engine (opens in a new tab)</span></a></li>
+<li><h3>Discovery interview insights</h3><span class="sc">Research</span><p class="bd"><span>CI</span><span>evals</span><span>--live</span></p><p>Turns interviews into ranked themes, each carrying the verbatim quotes that earned it. Reach beats loudness. One furious user should not set a roadmap.</p><p class="proof">26 labeled utterances: quotable precision 1.00, recall 0.90, F1 0.95. Two misses kept on purpose.</p><a class="tl" href="https://github.com/i-am-amankishore/discovery-interview-insights" target="_blank" rel="noopener">Code on GitHub<span class="vh">: discovery-interview-insights (opens in a new tab)</span></a></li>
+<li><h3>Carrier onboarding checker</h3><span class="sc">Trust and safety</span><p class="bd"><span>CI</span><span>tests</span></p><p>Checks onboarding documents for completeness, expiry and consistency, and fails closed. A wrong hold costs a day; a wrong approval puts an unlicensed truck on the road.</p><p class="proof">9 decision invariants under test. 2 of 6 mock carriers onboard without human effort (1 approve, 1 approve with a flag); the other 4 fail closed to hold or review.</p><a class="tl" href="https://github.com/i-am-amankishore/carrier-onboarding-checker" target="_blank" rel="noopener">Code on GitHub<span class="vh">: carrier-onboarding-checker (opens in a new tab)</span></a></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="sec" id="writing">
+<div class="wrap">
+<div class="sh g"><div class="shb"><h2>Writing</h2><p class="intro">Arguments I keep making, written out in full.</p></div></div>
+<div class="g">
+<ul class="es body">
+<li><h3><a href="essays/why-agents-need-evals.html">Why agents need evals</a></h3><p class="em">Essay, 4 minute read</p><p>Most agent demos show you the run that worked. This essay is about the runs they leave out, and why accuracy is the wrong number to gate a release on.</p></li>
+<li><h3><a href="essays/explainable-pricing.html">Price the relationship, not the third decimal</a></h3><p class="em">Essay, 5 minute read</p><p>A quote nobody can take apart is a quote nobody trusts. Why every price should be line items a human can argue with, and why expected profit peaks at neither the highest win rate nor the fattest margin.</p></li>
+<li><h3><a href="essays/money-never-floats.html">Money never floats</a></h3><p class="em">Essay, 5 minute read</p><p>What a double-entry ledger for carrier payouts teaches: derive balances, never store them, and check the trial balance per currency, because converting first hides real imbalances behind FX rounding.</p></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="sec wk" id="principles">
+<div class="wrap">
+<div class="sh g"><div class="shb"><h2>How I work</h2><p class="intro">The rules I keep coming back to, each with its reason.</p></div></div>
+<div class="g">
+<blockquote class="pq body"><p>“Ship the boring version first. The elegant version teaches you nothing until real users have broken the simple one.”</p></blockquote>
+<ul class="rules body">
+<li><b>Evals before scale.</b><span>Nothing an LLM touches meets a customer without a measured baseline and an escalation path for when the model is wrong.</span></li>
+<li><b>Policy beats classification.</b><span>A workflow should survive the model being wrong. The rules about who answers a customer live in plain code, where a wrong model cannot touch them.</span></li>
+<li><b>Money logic must be explainable.</b><span>If pricing or settlements cannot be walked through with a CFO on one screen, they are not done.</span></li>
+<li><b>A theme without a quote is an opinion.</b><span>If research cannot point to a customer’s own words, it is the researcher talking.</span></li>
+<li><b>Process is a product too.</b><span>If it takes forty slides to explain, the process is the problem, not the audience.</span></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="sec" id="path">
+<div class="wrap">
+<div class="sh g"><div class="shb"><h2>Path</h2><p class="intro">8+ years, operations first and then product. I got this job by shipping, not by presenting. That is still how I work.</p></div></div>
+<div class="tlx" aria-hidden="true">
+<span class="b" style="left:1.85%;width:36.11%">Yulu</span>
+<span class="b" style="left:37.96%;width:39.82%">Senior Product Manager, TruKKer</span>
+<span class="up"></span><span class="pm">Promoted</span>
+<span class="b y3" style="left:77.78%;width:19.44%">Head of Product</span>
+<div class="ax"><span style="left:0">2018</span><span class="o" style="left:11.11%">2019</span><span class="o" style="left:22.22%">2020</span><span style="left:33.33%">2021</span><span class="o" style="left:44.44%">2022</span><span class="o" style="left:55.56%">2023</span><span class="o" style="left:66.67%">2024</span><span style="left:77.78%">2025</span><span>Now</span></div>
+</div>
+<ol class="pt">
+<li><p class="when">Jan 2025 to now</p><div class="what"><h3>Head of Product, TruKKer</h3><p>Promoted from Senior Product Manager. I lead Product, Design and BI and report to the CEO and CTO. Scope: AI automation, fintech, B2C supply platforms and ERP enhancements, across EMEA and CIS.</p></div></li>
+<li><p class="when">Jun 2021 to Dec 2024</p><div class="what"><h3>Senior Product Manager, TruKKer</h3><p>I designed the Tech 2.0 platform that unified logistics, ERP and fintech, designed and launched FTL, LTL and freight forwarding modules, and delivered the FinOps module that took DSO from 145 to 95 days.</p></div></li>
+<li><p class="when">Mar 2018 to Jun 2021</p><div class="what"><h3>Manager, Process Optimization and Transformation, Yulu Bikes</h3><p>I led the launch of Bangalore operations as an early hire, oversaw 12,000+ cycles and e-bikes and a team of 350+, and worked on long-term rental during the Covid lockdowns, taking it from 5% to 45% of Bangalore business.</p></div></li>
+</ol>
+<dl class="cvx">
+<div><dt>Education</dt><dd>Bachelor of Instrumentation and Control Engineering, Haldia Institute of Technology, 2013 to 2017</dd></div>
+<div><dt>Awards</dt><dd>Best Performing Team 2025, TruKKer GLM 2025 (team award)<br>NASSCOM Shri Dewang Mehta IT Award 2016: Certificate of Excellence, Top Ranker</dd></div>
+<div><dt>Languages</dt><dd>English, Hindi</dd></div>
+<div><dt>Based in</dt><dd>Bangalore, India (IST). Working across EMEA and CIS.</dd></div>
+</dl>
+</div>
+</section>
+
+<section class="close" id="contact">
+<div class="wrap g">
+<div class="cl">
+<h2>Bring me the expensive problem.</h2>
+<p class="lede">The kind where a wrong answer costs a customer or a payment. Open to conversations about AI-native product organizations, logistics and fintech platforms, and roles where product owns outcomes, not tickets.</p>
+<p class="addr big">jayaswal.amk@gmail.com</p>
+<div class="cta"><a class="btn btn-p" href="mailto:jayaswal.amk@gmail.com">Email me</a><button class="btn" type="button" id="copy" hidden>Copy email</button></div>
+<p class="hint cs" id="copied" role="status"></p>
+</div>
+<ul class="cr">
+<li><a href="Aman-Kishore-CV.pdf" type="application/pdf">Download CV (PDF)</a></li>
+<li><a href="cv.html">Read the CV online</a></li>
+<li><a href="https://www.linkedin.com/in/i-am-amankishore" target="_blank" rel="noopener">LinkedIn<span class="vh"> (opens in a new tab)</span></a></li>
+<li><a href="https://github.com/i-am-amankishore" target="_blank" rel="noopener">GitHub<span class="vh"> (opens in a new tab)</span></a></li>
+<li>Bangalore, India (IST). Working across EMEA and CIS.</li>
+</ul>
+</div>
+</section>
+</main>
+<footer class="ftr"><div class="wrap"><p>Built by hand, no framework, loads in under a second.</p><a class="tl" href="#top">Back to top</a></div></footer>
+<script>
+/* inquiry-triage-agent rules baseline (rules.py, triage.py, evals/run_evals.py), exact Python parity.
+   No dependencies. Browser: window.TriageEngine. Node: module.exports. */
+(function () {
+'use strict';
+const lines = s => s.trim().split('\n');
+
+// Data, verbatim from the repo. CUES by weight: "3 a,b|2 c" is [a,3], [b,3], [c,2].
+const CUES = {};
+for (const [intent, groups] of Object.entries({
+  quote_request: '3 quote,quotation,how much,need a truck,need trucks|2 rate,price,pricing,cost|1 transport,move,shipment,flatbed,reefer,trailer,tons',
+  shipment_status: '3 where is,eta,status,not arrived|2 track,tracking,in transit,reached,location,update on,arrived|1 delayed',
+  document_submission: '4 proof of delivery|3 pod,waybill,delivery note|2 attached,attaching,upload,documents,bayan,istimara,kyc,insurance copy',
+  payment_query: '3 payment,paid,payout,settlement,statement of account,soa,credit note,refund,pending payment|2 overdue,balance,receivable,wallet|1 invoice',
+  complaint: '4 complaint,unacceptable|3 worst,damaged,escalate,rude,misbehaved,compensation,frustrated,disappointed,never using|2 angry,broken,claim,poor,late again',
+})) CUES[intent] = groups.split('|').flatMap(g => g.slice(2).split(',').map(p => [p, +g[0]]));
+const INTENTS = [...Object.keys(CUES), 'other'];
+const PRIORITY = ['complaint', 'payment_query', 'shipment_status', 'document_submission', 'quote_request']; // ties go to the costlier miss
+const CITIES = 'riyadh,jeddah,dammam,mecca,medina,dubai,abu dhabi,sharjah,doha,kuwait city,muscat,amman,manama,istanbul,ankara,izmir,almaty,astana,cairo'.split(',');
+const ALWAYS_HUMAN = ['complaint', 'payment_query'];
+const MUST_ESCALATE = ['complaint', 'payment_query']; // run_evals.py
+const CONFIDENCE_FLOOR = 0.6;
+const MONEY_TERMS = 'invoice,payment,paid,refund,overdue,payout,settlement,credit note,soa,balance,billed,charged,charges'.split(',');
+const REPLY_TEMPLATES = {
+  quote_request: 'Thanks for reaching out. To price this accurately I need three things: pickup and delivery locations{lane_note}, cargo weight and type{weight_note}, and your preferred pickup date. Send those and you will have a quote within the hour.',
+  shipment_status: 'Thanks for checking in{ref_note}. I am pulling the live position of your shipment now and will send the current location and updated ETA in the next few minutes.',
+  document_submission: 'Received, thank you{ref_note}. The documents are in the validation queue. If anything is missing or unreadable you will hear back within 30 minutes, otherwise consider them accepted.',
+};
+// data/inquiries.jsonl as "channel sender text"
+const DEMO_INBOX = lines(`
+whatsapp shipper Hi, I need a quote for moving 24 tons of steel coils from Riyadh to Jeddah next Tuesday. Flatbed preferred.
+email shipper Where is my shipment? Order no TRK-48291 was supposed to arrive yesterday. Please share ETA.
+whatsapp carrier POD attached for trip TRP-99120. Delivery note signed by receiver.
+email carrier Our payment for invoice INV-20443 is still pending. It is 40 days overdue now. When will the settlement be processed?
+whatsapp shipper This is unacceptable. The driver was rude at the warehouse and two pallets arrived damaged. I want to file a complaint and discuss compensation.
+email shipper Good morning, can you share pricing for 3 reefer trucks weekly from Dammam to Dubai? Ongoing contract, temperature controlled.
+whatsapp carrier Attaching istimara and insurance copy for the new truck. Please complete the onboarding documents check.
+whatsapp shipper hello
+email shipper Any update on load LD-77301? Tracker shows it stopped near Abu Dhabi since morning.
+email carrier Please send the statement of account for last month. Our finance team shows a balance mismatch on two invoices.
+whatsapp shipper Need 2 trucks tomorrow from Istanbul to Ankara, around 18 tons of packaged food. How much will it cost?
+email shipper Second time this month the truck is late again. If this continues we are moving our volume elsewhere. Escalate this to your manager.
+`).map((l, i) => {
+  const [, channel, sender, text] = l.match(/^(\S+) (\S+) (.*)$/);
+  return { id: `MSG-${String(i + 1).padStart(3, '0')}`, channel, sender, text };
+});
+// evals/labeled.jsonl in file order, under "# expected" lines
+const EVAL_CASES = [];
+let expected;
+for (const l of lines(`
+# quote_request
+Need a quotation for 20 tons cement from Riyadh to Dammam on Thursday
+How much to move a 40ft container from Jeddah port to Mecca?
+Please share your rate for weekly reefer runs Dubai to Muscat
+We need 5 flatbeds next week for structural steel, what would be the price per truck?
+Looking to transport furniture from Sharjah to Abu Dhabi, need cost estimate
+# shipment_status
+Where is my truck? Shipment TRK-11002 should have reached by now
+Please share ETA for order no LD-55210
+Tracking shows no movement since last night, what is the status?
+Has the vehicle reached the delivery location? Need an update on trip TRP-30991
+# document_submission
+POD attached for yesterday's delivery, please confirm receipt
+Uploading the signed delivery note and waybill for trip TRP-88213
+Attaching istimara, license and insurance copy for onboarding
+KYC documents attached as requested, let me know if anything else is needed
+# payment_query
+Our payout for last week's trips has not arrived, please check the settlement
+Invoice INV-30112 is 35 days overdue, when will payment be released?
+Please send the SOA for March, we see a balance mismatch
+We were charged twice for the same trip, need a refund or credit note
+When will the pending payment against our wallet be cleared?
+# complaint
+The driver misbehaved with our warehouse staff, this is a formal complaint
+Cargo arrived damaged, three boxes broken. We expect compensation
+Worst service this quarter, trucks late again and again. Escalate this
+I am extremely disappointed with how the delivery was handled
+# other
+hi
+Is this the right number for TruKKer partners?
+# payment_query
+The shipment arrived but the invoice amount looks wrong, please check and update the status
+# shipment_status
+Truck delayed at the border, will this affect the delivery charges?
+`)) if (l.startsWith('# ')) expected = l.slice(2); else EVAL_CASES.push({ text: l, expected });
+
+// py(): a Python pattern with Python's Unicode \w \d \s (JS's are ASCII), checked per code point
+const W = '\\p{L}\\p{N}_';
+const S = '[\\t-\\r\\x1c-\\x20\\x85\\xa0\\u1680\\u2000-\\u200a\\u2028\\u2029\\u202f\\u205f\\u3000]';
+const py = (src, flags = '') => new RegExp(src
+  .replace(/^\\b/, `(?:^|[^${W}])`) // no lookbehind: older Safari lacks it
+  .replace(/\\b/g, `(?![${W}])`) // each later \b follows a letter
+  .replace(/\\s/g, S).replace(/\\d/g, '\\p{Nd}')
+  .replace(/\$/g, '(?=\\n?$)'), flags + 'u'); // Python's $ also matches before a final \n
+const CUE_RX = {};
+for (const [p] of Object.values(CUES).flat()) CUE_RX[p] = py(`\\b${p}\\b`);
+const LANE = py(String.raw`from\s+([a-z][a-z ]{2,25}?)\s+to\s+([a-z][a-z ]{2,25}?)(?:[\.,\n;]|$)`);
+const WEIGHT = py(String.raw`(\d+(?:\.\d+)?)\s*(kg|kgs|ton|tons|tonnes)\b`);
+const TRUCKS = py(String.raw`(\d+)\s*(?:x\s*)?(trucks?|vehicles?|flatbeds?|reefers?|trailers?)\b`);
+const TRUCK_TYPE = py(String.raw`\b(flatbed|reefer|box|curtainside|lowbed|tipper)\b`);
+const REF = py(String.raw`(?:order|shipment|trip|invoice|load)\s*(?:no\.?|number|#|id)?\s*[:#]?\s*([A-Z]{2,4}-?\d{3,8})`, 'i');
+// sees only [a-z ] lane text, so ASCII \b is exact
+const TEMPORAL = /\b(next|this|on|by|before|after|tomorrow|today|tonight|asap|urgent|monday|tuesday|wednesday|thursday|friday|saturday|sunday|week|month)\b/;
+// Python's re.I also maps these to i, i, s, k (same length)
+const fold = s => s.replace(/[\u0130\u0131]/g, 'i').replace(/\u017f/g, 's').replace(/\u212a/g, 'k');
+// int() reads any Nd digit; Nd digits run in tens from zero
+const digit = d => { const c = d.codePointAt(0); let z = c; while (/\p{Nd}/u.test(String.fromCodePoint(z - 1))) z--; return (c - z) % 10; };
+const title = s => s.replace(/[a-z]+/gi, w => w[0].toUpperCase() + w.slice(1).toLowerCase()); // str.title() on ASCII
+
+// Python's {:.2f} and round(x, 2) send exact halves to even, toFixed sends them up.
+// At two decimals the only exact halves are odd eighths (0.125, 0.625...).
+function formatConfidence(c) {
+  const k = Math.floor(c * 100);
+  return Number.isInteger(c * 8) && (c * 8) % 2 ? ((k + (k & 1)) / 100).toFixed(2) : c.toFixed(2);
+}
+
+// ---- rules.py ----
+function classify(text) {
+  const lower = text.toLowerCase(), scores = {};
+  for (const intent of Object.keys(CUES)) {
+    scores[intent] = 0; // multi-word cues are substring checks
+    for (const [p, w] of CUES[intent]) if (p.includes(' ') ? lower.includes(p) : CUE_RX[p].test(lower)) scores[intent] += w;
+  }
+  // sorted(key=(score, -priority), reverse=True) is stable, like Array.sort
+  const rank = i => (PRIORITY.includes(i) ? PRIORITY.indexOf(i) : 99);
+  const [first, next] = Object.keys(scores).sort((a, b) => scores[b] - scores[a] || rank(a) - rank(b));
+  const top = scores[first], second = next ? scores[next] : 0;
+  if (top < 2) return { intent: 'other', confidence: 0, scores };
+  return { intent: first, confidence: top + second ? +formatConfidence(top / (top + second)) : 0, scores };
+}
+
+function cleanPlace(raw) {
+  const m = TEMPORAL.exec(raw);
+  const place = (m ? raw.slice(0, m.index) : raw).replace(/^[ ,.]+|[ ,.]+$/g, '');
+  return place ? title(place) : null;
+}
+
+function extractEntities(text) {
+  const e = {}, lower = text.toLowerCase();
+  let m = LANE.exec(lower);
+  if (m) {
+    const origin = cleanPlace(m[1]), destination = cleanPlace(m[2]);
+    if (origin) e.origin = origin;
+    if (destination) e.destination = destination;
+  } else {
+    const found = CITIES.filter(c => lower.includes(c)).map(title);
+    if (found.length >= 2) [e.origin, e.destination] = found;
+    else if (found.length === 1) e.city = found[0];
+  }
+  if ((m = WEIGHT.exec(lower))) e.weight = `${m[1]} ${m[2]}`;
+  if ((m = TRUCKS.exec(lower))) e.truck_count = Number(m[1].replace(/\p{Nd}/gu, digit));
+  if ((m = TRUCK_TYPE.exec(lower))) e.truck_type = m[1];
+  if ((m = REF.exec(fold(text)))) {
+    const end = m.index + m[0].length; // the reference group ends the match
+    e.reference = text.slice(end - m[1].length, end).toUpperCase();
+  }
+  return e;
+}
+
+// ---- triage.py ----
+function route(intent, confidence, text = '', { guardrail = true } = {}) {
+  const human = reason => ({ decision: 'human', reason });
+  if (ALWAYS_HUMAN.includes(intent)) return human('policy: money and anger always get a human');
+  if (intent === 'other') return human('policy: unclassified goes to a human');
+  // f"{0.6}" and String(0.6) both print 0.6
+  if (confidence < CONFIDENCE_FLOOR) return human(`confidence ${formatConfidence(confidence)} below floor ${CONFIDENCE_FLOOR}`);
+  const lower = text.toLowerCase();
+  if (guardrail && MONEY_TERMS.some(t => lower.includes(t))) {
+    return human('guardrail: billing language present, a human confirms even when the intent looks routine');
+  }
+  return { decision: 'auto', reason: 'clear intent, safe to auto-handle' };
+}
+
+function draftReply(intent, e) {
+  const template = REPLY_TEMPLATES[intent];
+  if (typeof template !== 'string') return null;
+  const notes = {
+    lane_note: 'origin' in e && 'destination' in e ? ` (I have ${e.origin} to ${e.destination})` : '',
+    weight_note: 'weight' in e ? ` (I have ${e.weight})` : '',
+    ref_note: 'reference' in e ? ` on ${e.reference}` : '',
+  };
+  return template.replace(/\{(\w+)\}/g, (_, k) => notes[k]);
+}
+
+function triage(text, { guardrail = true } = {}) {
+  const { intent, confidence, scores } = classify(text);
+  const entities = extractEntities(text);
+  const { decision, reason } = route(intent, confidence, text, { guardrail });
+  return { intent, confidence, scores, entities, decision, reason, draft: decision === 'auto' ? draftReply(intent, entities) : null };
+}
+
+// ---- evals/run_evals.py: only an escalation recall of 1.0 ships ----
+function evaluate({ guardrail = true } = {}) {
+  const cases = EVAL_CASES.map(({ text, expected }) => {
+    const { intent, confidence } = classify(text);
+    const { decision, reason } = route(intent, confidence, text, { guardrail });
+    return { text, expected, intent, confidence, decision, reason, correct: intent === expected, mustEscalate: MUST_ESCALATE.includes(expected) };
+  });
+  const tally = (pick, ok) => { const s = cases.filter(pick); return [s.filter(ok).length, s.length]; };
+  const recall = tally(c => c.mustEscalate, c => c.decision === 'human');
+  return {
+    escalationRecall: recall, autoPrecision: tally(c => c.decision === 'auto', c => c.correct),
+    intentAccuracy: tally(() => true, c => c.correct), ship: recall[0] === recall[1], cases,
+  };
+}
+
+const api = Object.freeze({
+  INTENTS, CUES, PRIORITY, CITIES, ALWAYS_HUMAN, MUST_ESCALATE, CONFIDENCE_FLOOR, MONEY_TERMS, REPLY_TEMPLATES,
+  DEMO_INBOX, EVAL_CASES, classify, extractEntities, route, draftReply, triage, evaluate, formatConfidence,
+});
+if (typeof module === 'object' && module.exports) module.exports = api;
+if (typeof window === 'object') window.TriageEngine = api;
+})();
+</script>
+<script>
+(function () {
+'use strict';
+var d = document, root = d.documentElement;
+function $(id) { return d.getElementById(id); }
+function each(list, fn) { Array.prototype.forEach.call(list, fn); }
+var menu = d.querySelector('.menu');
+if (menu) {
+menu.addEventListener('click', function (e) { if (e.target.closest('a')) menu.open = false; });
+d.addEventListener('keydown', function (e) {
+if (e.key === 'Escape' && menu.open) { menu.open = false; menu.querySelector('summary').focus(); }
+});
+d.addEventListener('click', function (e) { if (menu.open && !menu.contains(e.target)) menu.open = false; });
+menu.addEventListener('focusout', function (e) { if (menu.open && e.relatedTarget && !menu.contains(e.relatedTarget)) menu.open = false; });
+}
+var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+var tbs = d.querySelectorAll('.theme');
+function cur() { return root.getAttribute('data-theme') || (mq && mq.matches ? 'dark' : 'light'); }
+function sync() {
+var label = 'Switch to ' + (cur() === 'dark' ? 'light' : 'dark') + ' theme';
+each(tbs, function (b) {
+b.hidden = false;
+var t = b.querySelector('.tt');
+if (t) t.textContent = label; else b.setAttribute('aria-label', label);
+});
+if (root.hasAttribute('data-theme')) {
+var c = getComputedStyle(d.body).backgroundColor;
+each(d.querySelectorAll('meta[name="theme-color"]'), function (m) { m.setAttribute('content', c); });
+}
+}
+each(tbs, function (b) {
+b.addEventListener('click', function () {
+var next = cur() === 'dark' ? 'light' : 'dark';
+root.setAttribute('data-theme', next);
+try { localStorage.setItem('theme', next); } catch (e) {}
+sync();
+});
+});
+if (mq && mq.addEventListener) mq.addEventListener('change', sync);
+sync();
+var cb = $('copy'), cs = $('copied'), ct;
+if (cb) {
+cb.hidden = false;
+cb.addEventListener('click', function () {
+function done(ok) {
+cb.textContent = ok ? 'Copied' : 'Copy email';
+cs.textContent = ok ? 'Copied' : 'Copy failed. Select the address above.';
+clearTimeout(ct);
+ct = setTimeout(function () { cb.textContent = 'Copy email'; cs.textContent = ''; }, 4000);
+}
+try { navigator.clipboard.writeText('jayaswal.amk@gmail.com').then(function () { done(true); }, function () { done(false); }); }
+catch (e) { done(false); }
+});
+}
+var T = window.TriageEngine, live = d.querySelector('.r-live');
+if (!T || !live) return;
+var E = T.EVAL_CASES, I = T.DEMO_INBOX;
+var S = [
+[E[24].text, 'High confidence, wrong intent. Only the money guardrail catches it.'],
+[I[0].text, 'Clear intent, fields pulled out, reply drafted.'],
+[I[1].text, 'The reference lands in the drafted reply.'],
+[I[2].text, 'Routine paperwork. The router answers.'],
+[I[3].text, 'Money. A person answers, whatever the confidence.'],
+[I[4].text, 'Anger. A person answers.'],
+[E[13].text, 'Low confidence, but the money rule fires first. A person answers.'],
+[E[25].text, 'The classifier misses this one, and it fails safe to a person.'],
+[I[7].text, 'Nothing to classify. A person reads it.']
+];
+var NAME = { quote_request: 'Quote request', shipment_status: 'Shipment status', document_submission: 'Document submission',
+payment_query: 'Payment query', complaint: 'Complaint', other: 'Other (unclassified)' };
+var FIELD = { origin: 'Origin', destination: 'Destination', city: 'City', weight: 'Weight', truck_count: 'Trucks',
+truck_type: 'Truck type', reference: 'Reference' };
+var ICON = {
+human: '<circle cx="12" cy="7.5" r="3.5"/><path d="M5 20c.6-3.9 3.4-6.5 7-6.5s6.4 2.6 7 6.5"/>',
+auto: '<path d="M9 6 3.5 11.5 9 17"/><path d="M4 11.5h9.5a6 6 0 0 1 6 6V19"/>',
+pass: '<circle cx="12" cy="12" r="9.5"/><path d="m7.5 12.5 3 3 6-6.5"/>',
+stop: '<path d="M8.2 2.5h7.6l5.7 5.7v7.6l-5.7 5.7H8.2l-5.7-5.7V8.2z"/><path d="m8.5 8.5 7 7m0-7-7 7"/>'
+};
+var PLAIN = [
+'Complaints and payment questions never get an auto-reply.',
+'The router could not tell what this is, so a person reads it.',
+'No intent won clearly enough, so a person reads it.',
+'It mentions money, so a person confirms before anything goes out.',
+'One clear intent, no money, no anger. The router answers.'
+];
+var msg = $('msg'), sw = $('gsw'), ann = $('ann'), chips = d.querySelectorAll('.chips button'), rules = d.querySelectorAll('#rules li');
+var guard = true, gates = {}, t1, t2, t3;
+function svg(k) { return '<svg class="i" viewBox="0 0 24 24" aria-hidden="true">' + ICON[k] + '</svg>'; }
+function el(tag, cls, text) { var e = d.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+function frac(p) { return p[0] + '/' + p[1]; }
+function gate(on) { return gates[on] || (gates[on] = T.evaluate({ guardrail: on })); }
+function rank(i) { var k = T.PRIORITY.indexOf(i); return k < 0 ? 99 : k; }
+function which(reason) {
+return /^policy: money/.test(reason) ? 0 : /^policy: unclassified/.test(reason) ? 1 : /^confidence /.test(reason) ? 2 : /^guardrail/.test(reason) ? 3 : 4;
+}
+function render(say) {
+var text = msg.value, r = T.triage(text, { guardrail: guard }), auto = r.decision === 'auto';
+var conf = T.formatConfidence(r.confidence);
+var keys = Object.keys(r.scores).sort(function (a, b) { return r.scores[b] - r.scores[a] || rank(a) - rank(b); });
+var top = r.scores[keys[0]], second = r.scores[keys[1]];
+$('oi').textContent = NAME[r.intent];
+$('oc').textContent = conf;
+$('omt').style.width = Math.min(100, r.confidence * 100) + '%';
+$('ow').textContent = r.intent === 'other' ? 'No intent scored 2 or more, so there is no winner to measure.'
+: 'Top score ' + top + ' (' + NAME[keys[0]] + '), runner-up ' + second + (second ? ' (' + NAME[keys[1]] + ')' : '') +
+': ' + top + ' / (' + top + ' + ' + second + ') = ' + conf + '.';
+var f = $('of'), fk = Object.keys(r.entities);
+f.textContent = fk.length ? '' : 'None found';
+fk.forEach(function (k) {
+var s = el('span', 'fv'); s.appendChild(el('span', 'fk', FIELD[k] + ' ')); s.appendChild(d.createTextNode(String(r.entities[k]))); f.appendChild(s);
+});
+var w = which(r.reason);
+each(rules, function (li, i) {
+li.className = i === w ? 'on' : '';
+if (i === 2) li.querySelector('.rt').textContent = i === w ? r.reason : 'confidence below floor 0.6';
+li.querySelector('.tg').textContent = i === w ? 'Fired' : (i === 3 && !guard ? 'Off' : '');
+});
+$('op').textContent = PLAIN[w];
+var od = $('od'); od.innerHTML = svg(auto ? 'auto' : 'human'); od.appendChild(d.createTextNode(auto ? 'Auto-reply' : 'Human'));
+var dr = $('odr'); dr.textContent = auto ? '“' + r.draft + '”' : 'No draft. A person answers this one.'; dr.className = auto ? 'draft' : 'hint';
+var k = -1;
+S.forEach(function (s, i) { if (s[0] === text) k = i; });
+each(chips, function (b, i) { if (i === k) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current'); });
+var flip = !guard && auto && T.route(r.intent, r.confidence, text).decision === 'human';
+var note = flip ? (k === 0 ? 'Guardrail off: the router auto-replies with a tracking update. A polite answer to the wrong question.'
+: 'Guardrail off: this message mentions money, and it now gets an auto-reply.') : (k >= 0 ? S[k][1] : '');
+var on = $('on'); on.textContent = note; on.hidden = !note; on.className = 'note' + (flip ? ' flip' : '');
+var g = gate(guard), other = gate(!guard);
+[g.escalationRecall, g.autoPrecision, g.intentAccuracy].forEach(function (p, i) {
+var v = $('m' + i); v.textContent = frac(p); v.appendChild(el('small', '', (p[0] / p[1]).toFixed(2)));
+var b = $('p' + i); b.style.setProperty('--n', p[1]); b.style.setProperty('--p', (100 * p[0] / p[1]) + '%');
+});
+var verdict = g.ship ? 'PASS' : 'DO NOT SHIP';
+var gm = $('gmini'); gm.className = 'gmini' + (g.ship ? '' : ' fail');
+gm.innerHTML = svg(g.ship ? 'pass' : 'stop'); gm.appendChild(d.createTextNode('Eval gate: ' + verdict + ', escalation recall ' + frac(g.escalationRecall) + '. This message: ' + (auto ? 'auto-reply' : 'human') + '.'));
+var miss = g.cases.filter(function (c) { return c.mustEscalate && c.decision !== 'human'; });
+var vd = $('vd'), p = el('p');
+vd.className = 'verdict' + (g.ship ? '' : ' fail');
+vd.innerHTML = svg(g.ship ? 'pass' : 'stop');
+p.appendChild(el('b', '', verdict + '.'));
+p.appendChild(d.createTextNode(' Escalation recall ' + frac(g.escalationRecall) + '. ' + (g.ship ? 'Every message that needed a human got one.'
+: (miss.length === 1 ? 'One message that needed a human got an auto-reply:' : miss.length + ' messages that needed a human got auto-replies:'))));
+miss.forEach(function (c) { p.appendChild(el('span', 'miss', '“' + c.text + '”')); });
+vd.appendChild(p);
+var gn = $('gn');
+gn.textContent = !guard && frac(other.intentAccuracy) === frac(g.intentAccuracy)
+? 'Intent accuracy did not move: ' + frac(g.intentAccuracy) + ' either way. Same classifier, different product.' : '';
+gn.hidden = !gn.textContent;
+if (say) {
+var line = NAME[r.intent] + ', confidence ' + conf + '. Decision: ' + (auto ? 'Auto-reply' : 'Human') + '. Rule: ' + r.reason + '.';
+if (say === 2) line += ' Money guardrail ' + (guard ? 'on' : 'off') + '. Eval gate: ' + verdict +
+', escalation recall ' + g.escalationRecall[0] + ' of ' + g.escalationRecall[1] + '.';
+clearTimeout(t3); ann.textContent = '';
+t3 = setTimeout(function () { ann.textContent = line; }, 60);
+}
+}
+function setGuard(on) {
+guard = on;
+sw.setAttribute('aria-checked', String(on));
+sw.querySelector('.gs').textContent = on ? 'On' : 'Off';
+}
+msg.addEventListener('input', function () {
+clearTimeout(t1); clearTimeout(t2);
+t1 = setTimeout(function () { render(0); }, 150);
+t2 = setTimeout(function () { render(1); }, 1100);
+});
+$('run').addEventListener('click', function () { clearTimeout(t1); clearTimeout(t2); render(1); });
+$('reset').addEventListener('click', function () { msg.value = S[0][0]; setGuard(true); render(2); });
+sw.addEventListener('click', function () { setGuard(!guard); render(2); });
+each(chips, function (b) {
+b.addEventListener('click', function () { msg.value = S[+b.getAttribute('data-s')][0]; render(1); });
+});
+msg.value = S[0][0];
+live.hidden = false;
+$('rin').hidden = false;
+d.querySelector('.r-static').hidden = true;
+render(0);
+})();
+</script>
 </body>
 </html>
